@@ -9,7 +9,7 @@
 
 * Bảng mã OPCODE theo chuẩn điện quang trong model Vendor Mode
 | OPCODE | Kiểu lệnh | mô tả |unacknowledged
-| :---: | :--- | :--- |
+| :---: | :--- | :--- | :--- |
 | 0xC0 | GET | Lệnh đọc về trạng thái đèn |
 | 0xC1 | SET | Lệnh đảo trạng thái đèn và đèn sẽ trả lời khi nhận được lệnh này |
 | 0xC2 | SET UNACKNOWLEDGED | Lệnh đảo trạng thái đèn |
@@ -17,12 +17,7 @@
 | 0xC4 | SET | Lệnh giảm độ sáng đèn so với độ sáng hiện tại,  đèn trả lời lại khi nhận được lệnh |
 | 0xC5 | SET UNACKNOWLEDGED | Lệnh giảm độ sáng đèn so với độ sáng hiện tại |
 | 0xC3 | STATUS | Trả về độ sáng đèn so với độ sáng hiện tại |
-
 | 0xC6 | SET | Lệnh tăng độ sáng đèn so với độ sáng hiện tại,  đèn trả lời lại khi nhận được lệnh |
 | 0xC7 | SET UNACKNOWLEDGED | Lệnh tăng độ sáng đèn so với độ sáng hiện tại |
-
 | 0xC6 | SET | Lệnh chuyển chế độ tự động |
-| 0xC7 | SET UNACKNOWLEDGED | lệnh chuyển chế độ tự động v |
-
-| 0xC4 |  | Lệnh giảm độ sáng đèn so với độ sáng hiện tại,  đèn trả lời lại khi nhận được lệnh |
-| 0xC4 | SET UNACKNOWLEDGED | Lệnh giảm độ sáng đèn so với độ sáng hiện tại |
+| 0xC7 | SET UNACKNOWLEDGED | lệnh chuyển chế độ tự động |
