@@ -8,8 +8,9 @@
 * Điện quang sử dụng chip Bluetooth Nordic nên Vendor Model sẽ có ID là 0x00590000 (trong đó 4 số đầu là id của chip Nordic đã được đăng kí, còn 4 số sau là điện quang tùy chọn để sử dụng)
 
 * Bảng mã OPCODE theo chuẩn điện quang trong model Vendor Mode
-| OPCODE | Kiểu lệnh | mô tả |unacknowledged
-| :---: | :--- | :--- | :--- |
+
+| OPCODE | Kiểu lệnh | mô tả |
+| :---: | :--- | :--- | 
 | 0xC0 | GET | Lệnh đọc về trạng thái đèn |
 | 0xC1 | SET | Lệnh đảo trạng thái đèn và đèn sẽ trả lời khi nhận được lệnh này |
 | 0xC2 | SET UNACKNOWLEDGED | Lệnh đảo trạng thái đèn |
