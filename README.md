@@ -15,28 +15,22 @@
 | 0xC1 | ACTIVITY_SET | Lệnh set chế độ đèn, daylight, warm white |
 | 0xC2 | ACTIVITY_SET_UNACKNOWLEDGED | Lệnh set chế độ đèn, daylight, warm white  |
 | 0xC3 | ACTIVITY_STATUS | Trạng thái activity |
-
 | 0xC4 | BRIGHTNESS_GET | Lệnh đọc về độ sáng đèn |
 | 0xC5 | BRIGHTNESS_SET | Lệnh tăng hoặc giảm độ sáng đèn |
 | 0xC6 | BRIGHTNESS_SET_UNACKNOWLEDGED | Lệnh tăng hoặc giảm độ sáng đèn  |
 | 0xC7 | BRIGHTNESS_STATUS | Trạng thái độ sáng đèn |
-
 | 0xC8 | EFFECT_GET | Đọc về hiệu ứng đang chạy |
 | 0xC9 | EFFECT_SET | Lệnh set hiệu ứng |
 | 0xCA | EFFECT_SET_UNACKNOWLEDGED | Lệnh set hiệu ứng |
 | 0xCB | EFFECT_STATUS | Trạng thái hiệu ứng đang set |
-
 | 0xCC | DEFAULT_EFFECT_GET | Đọc về hiệu ứng mặc định đang chạy |
 | 0xCD | DEFAULT_EFFECT_SET | Set hiệu ứng chạy |
 | 0xCE | DEFAULT_EFFECT_SET_UNACKNOWLEDGED | Set hiệu ứng chạy |
 | 0xCF | DEFAULT_EFFECT_STATUS | Trạng thái hiệu ứng đang set |
-
-
 | 0xD0 | DFU_GET | Lệnh đọc chế độ dfu |
 | 0xD1 | DFU_SET | Lệnh set đèn vào chế độ DFU |
 | 0xD2 | DFU_SET_UNACKNOWLEDGED | Lệnh set đèn vào chế độ DFU  |
 | 0xD3 | DFU_STATUS | Trạng thái dfu |
-
 | 0xD4 | TEST_GET | Lệnh đọc về trạng thái đèn |
 | 0xD5 | TEST_SET | Lệnh test đèn|
 | 0xD6 | TEST_SET_UNACKNOWLEDGED | Lệnh test đèn  |
