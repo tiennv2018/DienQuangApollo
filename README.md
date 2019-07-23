@@ -84,25 +84,25 @@
 ### 16. Message DEFAULT_EFFECT_STATUS
 
 
-### 1. Message DFU_GET
+### 17. Message DFU_GET
 
 
-### 2. Message DFU_SET
+### 18. Message DFU_SET
 
 
-### 3. Message DFU_SET_UNACKNOWLEDGED
+### 19. Message DFU_SET_UNACKNOWLEDGED
 
 
-### 4. Message DFU_STATUS
+### 20. Message DFU_STATUS
 
 
-### 5. Message TEST_GET
+### 21. Message TEST_GET
 
 
-### 6. Message TEST_SET
+### 22. Message TEST_SET
 
 
-### 7. Message TEST_SET_UNACKNOWLEDGED
+### 23. Message TEST_SET_UNACKNOWLEDGED
 
 
-### 8. Message TEST_STATUS
+### 24. Message TEST_STATUS
