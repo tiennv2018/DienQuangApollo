@@ -37,81 +37,89 @@
 | 0xD7 | TEST_STATUS | Trạng thái test đèn |
 
 ### 1. Message ACTIVITY_GET
+
+
+### 2. Message ACTIVITY_SET
+
+
+
+### 3. Message ACTIVITY_SET_UNACKNOWLEDGED
+
+
+
+### 4. Message ACTIVITY_STATUS
+
+
+
+### 5. Message BRIGHTNESS_GET
+
+``` Sau khi nhận lệnh này, đèn sẽ trả về message BRIGHTNESS_STATUS ```
+
+### 6. Message BRIGHTNESS_SET
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | Transaction Identifier |
+| Type | 1 | nếu bằng 0-> giảm, bằng 1-> tăng|
+| Value | 2 | giá trị cần tăng hoặc giảm |
+
+``` Sau khi nhận lệnh này, đèn sẽ trả về message BRIGHTNESS_STATUS ```
+
+### 7. Message BRIGHTNESS_SET_UNACKNOWLEDGED
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | Transaction Identifier |
+| Type | 1 | nếu bằng 0-> giảm, bằng 1-> tăng|
+| Value | 2 | giá trị cần tăng hoặc giảm |
+
+### 8. Message BRIGHTNESS_STATUS
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| Value | 2 | giá trị độ sáng hiện tại |
+
+### 9. Message EFFECT_GET
+``` Sau khi nhận lệnh này, đèn sẽ trả về message ACTIVITY_STATUS ```
+
+### 10. Message EFFECT_SET
+
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
 | Lenght | 1 | Chiều dài của hiệu ứng tối đa là 12, chú ý chiều dài bao nhiêu thì dữ liệu hue, saturation, timer dài bấy nhiêu |
 | enable_dimer | 1 | Hiệu ứng đổi màu sử dụng dimer |
 | lightness | 2 | độ sáng của hiệu ứng từ 0x0000 -> 0xFFFF |
-| hue_0 | 2 | giá trị hue cho màu đầu tiên của hiệu ứng, từ 0->360 |
-| saturation_0 | 2 |  giá trị saturation cho màu đầu tiên của hiệu ứng, từ 0->0xFFFF  |
-| timer_0 | 2 | thời gian duy trì màu đầu tiên, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
-| hue_1 | 2 | giá trị hue cho màu thứ 1 của hiệu ứng, từ 0->360  |
-| saturation_1 | 2 | giá trị saturation cho màu thứ 1 của hiệu ứng, từ 0->0xFFFF |
-| timer_1 | 2 | thời gian duy trì màu 1, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
-| hue_2 | 2 | giá trị hue cho màu thứ 2 của hiệu ứng, từ 0->360 |
-| saturation_2 | 2 | giá trị saturation cho màu thứ 2 của hiệu ứng, từ 0->0xFFFF |
-| timer_2 | 2 | thời gian duy trì màu 2, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
-| hue_3 | 2 | giá trị hue cho màu thứ 3 của hiệu ứng, từ 0->360 |
-| saturation_3 | 2 | giá trị saturation cho màu thứ 3 của hiệu ứng, từ 0->0xFFFF |
-| timer_3 | 2 | thời gian duy trì màu 3, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
-| hue_4 | 2 | giá trị hue cho màu thứ 4 của hiệu ứng, từ 0->360 |
-| saturation_4 | 2 | giá trị saturation cho màu thứ 4 của hiệu ứng, từ 0->0xFFFF |
-| timer_4 | 2 | thời gian duy trì màu 4, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
-| hue_5 | 2 | giá trị hue cho màu thứ 5 của hiệu ứng, từ 0->360 |
-| saturation_5 | 2 | giá trị saturation cho màu thứ 5 của hiệu ứng, từ 0->0xFFFF |
-| timer_5 | 2 | thời gian duy trì màu 5, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
-| hue_6 | 2 | giá trị hue cho màu thứ 6 của hiệu ứng, từ 0->360 |
-| saturation_6 | 2 | giá trị saturation cho màu thứ 6 của hiệu ứng, từ 0->0xFFFF |
-| timer_6 | 2 | thời gian duy trì màu 6, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
-| hue_7 | 2 | giá trị hue cho màu thứ 7 của hiệu ứng, từ 0->360 |
-| saturation_7 | 2 | giá trị saturation cho màu thứ 7 của hiệu ứng, từ 0->0xFFFF |
-| timer_7 | 2 | thời gian duy trì màu 7, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
-| hue_8 | 2 | giá trị hue cho màu thứ 8 của hiệu ứng, từ 0->360 |
-| saturation_8 | 2 | giá trị saturation cho màu thứ 8 của hiệu ứng, từ 0->0xFFFF |
-| timer_8 | 2 | thời gian duy trì màu 8, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
-| hue_9 | 2 | giá trị hue cho màu thứ 9 của hiệu ứng, từ 0->360 |
-| saturation_9 | 2 | giá trị saturation cho màu thứ 9 của hiệu ứng, từ 0->0xFFFF |
-| timer_9 | 2 | thời gian duy trì màu 9, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
-| hue_10 | 2 | giá trị hue cho màu thứ 10 của hiệu ứng, từ 0->360 |
-| saturation_10 | 2 | giá trị saturation cho màu thứ 10 của hiệu ứng, từ 0->0xFFFF |
-| timer_10 | 2 | thời gian duy trì màu 10, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
-| hue_11 | 2 | giá trị hue cho màu thứ 11 của hiệu ứng, từ 0->360 |
-| saturation_11 | 2 | giá trị saturation cho màu thứ 11 của hiệu ứng, từ 0->0xFFFF |
-| timer_11 | 2 | thời gian duy trì màu 11, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
-
-### 2. Message ACTIVITY_SET
-
-
-### 3. Message ACTIVITY_SET_UNACKNOWLEDGED
-
-
-### 4. Message ACTIVITY_STATUS
-
-
-### 5. Message BRIGHTNESS_GET
-
-
-### 6. Message BRIGHTNESS_SET
-
-
-### 7. Message BRIGHTNESS_SET_UNACKNOWLEDGED
-
-
-### 8. Message BRIGHTNESS_STATUS
-
-
-### 9. Message EFFECT_GET
-
-
-### 10. Message EFFECT_SET
-
+| hue | 2 | giá trị hue cho màu đầu tiên của hiệu ứng, từ 0->360 |
+| saturation | 2 |  giá trị saturation cho màu đầu tiên của hiệu ứng, từ 0->0xFFFF  |
+| timer | 2 | thời gian duy trì màu đầu tiên, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
+`` Chú ý: nếu len=1 thì như trên, còn nếu len=n thì sẽ lặp lại n-1 lần từ byte hue đến byte timer sau khung truyền trên, sau khi nhận lệnh này, đèn sẽ trả về message EFFECT_STATUS ``
 
 ### 11. Message EFFECT_SET_UNACKNOWLEDGED
 
+ | Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | Transaction Identifier |
+| Lenght | 1 | Chiều dài của hiệu ứng tối đa là 12, chú ý chiều dài bao nhiêu thì dữ liệu hue, saturation, timer dài bấy nhiêu |
+| enable_dimer | 1 | Hiệu ứng đổi màu sử dụng dimer |
+| lightness | 2 | độ sáng của hiệu ứng từ 0x0000 -> 0xFFFF |
+| hue | 2 | giá trị hue cho màu đầu tiên của hiệu ứng, từ 0->360 |
+| saturation | 2 |  giá trị saturation cho màu đầu tiên của hiệu ứng, từ 0->0xFFFF  |
+| timer | 2 | thời gian duy trì màu đầu tiên, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
+`` Chú ý: nếu len=1 thì như trên, còn nếu len=n thì sẽ lặp lại n-1 lần từ byte hue đến byte timer sau khung truyền trên ``
 
 ### 12. Message EFFECT_STATUS
 
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | Transaction Identifier |
+| Lenght | 1 | Chiều dài của hiệu ứng tối đa là 12, chú ý chiều dài bao nhiêu thì dữ liệu hue, saturation, timer dài bấy nhiêu |
+| enable_dimer | 1 | Hiệu ứng đổi màu sử dụng dimer |
+| lightness | 2 | độ sáng của hiệu ứng từ 0x0000 -> 0xFFFF |
+| hue | 2 | giá trị hue cho màu đầu tiên của hiệu ứng, từ 0->360 |
+| saturation | 2 |  giá trị saturation cho màu đầu tiên của hiệu ứng, từ 0->0xFFFF  |
+| timer | 2 | thời gian duy trì màu đầu tiên, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
+`` Chú ý: nếu len=1 thì như trên, còn nếu len=n thì sẽ lặp lại n-1 lần từ byte hue đến byte timer sau khung truyền trên ``
 
 ### 13. Message DEFAULT_EFFECT_GET
 
