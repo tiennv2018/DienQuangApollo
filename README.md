@@ -38,7 +38,7 @@
 
 ### 1. Message ACTIVITY_GET
 | Field | Size (octets) | Notes |
-| :---: | :--- | :--- | 
+| :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
 | Lenght | 1 | Chiều dài của hiệu ứng tối đa là 12, chú ý chiều dài bao nhiêu thì dữ liệu hue, saturation, timer dài bấy nhiêu |
 | enable_dimer | 1 | Hiệu ứng đổi màu sử dụng dimer |
@@ -52,31 +52,31 @@
 | hue_2 | 2 | giá trị hue cho màu thứ 2 của hiệu ứng, từ 0->360 |
 | saturation_2 | 2 | giá trị saturation cho màu thứ 2 của hiệu ứng, từ 0->0xFFFF |
 | timer_2 | 2 | thời gian duy trì màu 2, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
-| hue_3 | giá trị hue cho màu thứ 3 của hiệu ứng, từ 0->360 |
+| hue_3 | 2 | giá trị hue cho màu thứ 3 của hiệu ứng, từ 0->360 |
 | saturation_3 | 2 | giá trị saturation cho màu thứ 3 của hiệu ứng, từ 0->0xFFFF |
 | timer_3 | 2 | thời gian duy trì màu 3, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
-| hue_4 | giá trị hue cho màu thứ 4 của hiệu ứng, từ 0->360 |
+| hue_4 | 2 | giá trị hue cho màu thứ 4 của hiệu ứng, từ 0->360 |
 | saturation_4 | 2 | giá trị saturation cho màu thứ 4 của hiệu ứng, từ 0->0xFFFF |
 | timer_4 | 2 | thời gian duy trì màu 4, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
-| hue_5 | giá trị hue cho màu thứ 5 của hiệu ứng, từ 0->360 |
+| hue_5 | 2 | giá trị hue cho màu thứ 5 của hiệu ứng, từ 0->360 |
 | saturation_5 | 2 | giá trị saturation cho màu thứ 5 của hiệu ứng, từ 0->0xFFFF |
 | timer_5 | 2 | thời gian duy trì màu 5, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
-| hue_6 | giá trị hue cho màu thứ 6 của hiệu ứng, từ 0->360 |
+| hue_6 | 2 | giá trị hue cho màu thứ 6 của hiệu ứng, từ 0->360 |
 | saturation_6 | 2 | giá trị saturation cho màu thứ 6 của hiệu ứng, từ 0->0xFFFF |
 | timer_6 | 2 | thời gian duy trì màu 6, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
-| hue_7 | giá trị hue cho màu thứ 7 của hiệu ứng, từ 0->360 |
+| hue_7 | 2 | giá trị hue cho màu thứ 7 của hiệu ứng, từ 0->360 |
 | saturation_7 | 2 | giá trị saturation cho màu thứ 7 của hiệu ứng, từ 0->0xFFFF |
 | timer_7 | 2 | thời gian duy trì màu 7, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
-| hue_8 | giá trị hue cho màu thứ 8 của hiệu ứng, từ 0->360 |
+| hue_8 | 2 | giá trị hue cho màu thứ 8 của hiệu ứng, từ 0->360 |
 | saturation_8 | 2 | giá trị saturation cho màu thứ 8 của hiệu ứng, từ 0->0xFFFF |
 | timer_8 | 2 | thời gian duy trì màu 8, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
-| hue_9 | giá trị hue cho màu thứ 9 của hiệu ứng, từ 0->360 |
+| hue_9 | 2 | giá trị hue cho màu thứ 9 của hiệu ứng, từ 0->360 |
 | saturation_9 | 2 | giá trị saturation cho màu thứ 9 của hiệu ứng, từ 0->0xFFFF |
 | timer_9 | 2 | thời gian duy trì màu 9, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
-| hue_10 | giá trị hue cho màu thứ 10 của hiệu ứng, từ 0->360 |
+| hue_10 | 2 | giá trị hue cho màu thứ 10 của hiệu ứng, từ 0->360 |
 | saturation_10 | 2 | giá trị saturation cho màu thứ 10 của hiệu ứng, từ 0->0xFFFF |
 | timer_10 | 2 | thời gian duy trì màu 10, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
-| hue_11 | giá trị hue cho màu thứ 11 của hiệu ứng, từ 0->360 |
+| hue_11 | 2 | giá trị hue cho màu thứ 11 của hiệu ứng, từ 0->360 |
 | saturation_11 | 2 | giá trị saturation cho màu thứ 11 của hiệu ứng, từ 0->0xFFFF |
 | timer_11 | 2 | thời gian duy trì màu 11, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
 
