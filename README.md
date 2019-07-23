@@ -93,6 +93,7 @@
 | hue | 2 | giá trị hue cho màu đầu tiên của hiệu ứng, từ 0->360 |
 | saturation | 2 |  giá trị saturation cho màu đầu tiên của hiệu ứng, từ 0->0xFFFF  |
 | timer | 2 | thời gian duy trì màu đầu tiên, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
+
 `` Chú ý: nếu len=1 thì như trên, còn nếu len=n thì sẽ lặp lại n-1 lần từ byte hue đến byte timer sau khung truyền trên, sau khi nhận lệnh này, đèn sẽ trả về message EFFECT_STATUS ``
 
 ### 11. Message EFFECT_SET_UNACKNOWLEDGED
@@ -106,6 +107,7 @@
 | hue | 2 | giá trị hue cho màu đầu tiên của hiệu ứng, từ 0->360 |
 | saturation | 2 |  giá trị saturation cho màu đầu tiên của hiệu ứng, từ 0->0xFFFF  |
 | timer | 2 | thời gian duy trì màu đầu tiên, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
+
 `` Chú ý: nếu len=1 thì như trên, còn nếu len=n thì sẽ lặp lại n-1 lần từ byte hue đến byte timer sau khung truyền trên ``
 
 ### 12. Message EFFECT_STATUS
@@ -119,6 +121,7 @@
 | hue | 2 | giá trị hue cho màu đầu tiên của hiệu ứng, từ 0->360 |
 | saturation | 2 |  giá trị saturation cho màu đầu tiên của hiệu ứng, từ 0->0xFFFF  |
 | timer | 2 | thời gian duy trì màu đầu tiên, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
+
 `` Chú ý: nếu len=1 thì như trên, còn nếu len=n thì sẽ lặp lại n-1 lần từ byte hue đến byte timer sau khung truyền trên ``
 
 ### 13. Message DEFAULT_EFFECT_GET
