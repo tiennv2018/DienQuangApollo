@@ -183,14 +183,14 @@
 | TID | 1 | Transaction Identifier |
 | loop | 1 | số lần nhấp nháy, từ 0-> 255 |
 
+``` Sau khi nhận lệnh này, đèn sẽ trả về message TEST_STATUS ```
+
 ### 23. Message TEST_SET_UNACKNOWLEDGED
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
 | loop | 1 | số lần nhấp nháy, từ 0-> 255 |
-
-``` Sau khi nhận lệnh này, đèn sẽ trả về message TEST_STATUS ```
 
 ### 24. Message TEST_STATUS
 
