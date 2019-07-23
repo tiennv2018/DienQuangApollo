@@ -36,7 +36,7 @@
 | 0xD6 | TEST_SET_UNACKNOWLEDGED | Lệnh test đèn  |
 | 0xD7 | TEST_STATUS | Trạng thái test đèn |
 
-## Message ACTIVITY_GET
+### 1. Message ACTIVITY_GET
 
 
 ## Message ACTIVITY_SET
