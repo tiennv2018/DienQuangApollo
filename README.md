@@ -39,20 +39,70 @@
 ### 1. Message ACTIVITY_GET
 
 
-## Message ACTIVITY_SET
+### 2. Message ACTIVITY_SET
 
 
-## Message ACTIVITY_SET_UNACKNOWLEDGED
+### 3. Message ACTIVITY_SET_UNACKNOWLEDGED
 
 
-## Message ACTIVITY_STATUS
+### 4. Message ACTIVITY_STATUS
 
 
-## Message BRIGHTNESS_GET
+### 5. Message BRIGHTNESS_GET
 
 
-## Message BRIGHTNESS_SET
+### 6. Message BRIGHTNESS_SET
 
 
-## Message BRIGHTNESS_SET_UNACKNOWLEDGED
+### 7. Message BRIGHTNESS_SET_UNACKNOWLEDGED
 
+
+### 8. Message BRIGHTNESS_STATUS
+
+
+### 9. Message EFFECT_GET
+
+
+### 10. Message EFFECT_SET
+
+
+### 11. Message EFFECT_SET_UNACKNOWLEDGED
+
+
+### 12. Message EFFECT_STATUS
+
+
+### 13. Message DEFAULT_EFFECT_GET
+
+
+### 14. Message DEFAULT_EFFECT_SET
+
+
+### 15. Message DEFAULT_EFFECT_SET_UNACKNOWLEDGED
+
+
+### 16. Message DEFAULT_EFFECT_STATUS
+
+
+### 1. Message DFU_GET
+
+
+### 2. Message DFU_SET
+
+
+### 3. Message DFU_SET_UNACKNOWLEDGED
+
+
+### 4. Message DFU_STATUS
+
+
+### 5. Message TEST_GET
+
+
+### 6. Message TEST_SET
+
+
+### 7. Message TEST_SET_UNACKNOWLEDGED
+
+
+### 8. Message TEST_STATUS
