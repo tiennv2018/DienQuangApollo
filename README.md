@@ -126,35 +126,76 @@
 
 ### 13. Message DEFAULT_EFFECT_GET
 
+``` Sau khi nhận lệnh này, đèn sẽ trả về message DEFAULT_EFFECT_STATUS ```
 
 ### 14. Message DEFAULT_EFFECT_SET
 
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | Transaction Identifier |
+
+``` Trong đèn có lưu dữ liệu của 3 loại hiệu ứng, Mỗi lần nhận lệnh này sẽ chuyển các hiệu ứng có sẵn này và chạy ```
 
 ### 15. Message DEFAULT_EFFECT_SET_UNACKNOWLEDGED
 
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | Transaction Identifier |
 
 ### 16. Message DEFAULT_EFFECT_STATUS
 
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| index | 1 | vị trí hiệu ứng đang chạy, từ 0->3 |
 
 ### 17. Message DFU_GET
 
+``` Lệnh này không có sẵn, vì khi vào DFU rồi thì kết nối đến đèn sẽ bị mất  ```
 
 ### 18. Message DFU_SET
 
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | Transaction Identifier |
+
+``` Sau khi nhận lệnh này, đèn sẽ trả về message DFU_STATUS ```
 
 ### 19. Message DFU_SET_UNACKNOWLEDGED
 
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | Transaction Identifier |
 
 ### 20. Message DFU_STATUS
 
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| Status | 1 | Trạng thái thực hiện 0 hoặc 1 |
 
 ### 21. Message TEST_GET
 
+``` Lệnh này đọc về trạng thái test đèn, trả về message TEST_STATUS ```
 
 ### 22. Message TEST_SET
 
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | Transaction Identifier |
+| loop | 1 | số lần nhấp nháy, từ 0-> 255 |
 
 ### 23. Message TEST_SET_UNACKNOWLEDGED
 
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | Transaction Identifier |
+| loop | 1 | số lần nhấp nháy, từ 0-> 255 |
+
+``` Sau khi nhận lệnh này, đèn sẽ trả về message TEST_STATUS ```
 
 ### 24. Message TEST_STATUS
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| loop | 1 | số lần nhấp nháy còn lại |
+
+
