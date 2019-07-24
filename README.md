@@ -38,18 +38,29 @@
 
 ### 1. Message ACTIVITY_GET
 
+``` Sau khi nhận lệnh này, đèn sẽ trả về message ACTIVITY_STATUS ```
 
 ### 2. Message ACTIVITY_SET
 
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | Transaction Identifier |
+| Activity | 1 | 0->OFF, 1-> daylight, 2->HSL, 3->Effect |
 
+``` Sau khi nhận lệnh này, đèn sẽ trả về message ACTIVITY_STATUS ```
 
 ### 3. Message ACTIVITY_SET_UNACKNOWLEDGED
 
-
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | Transaction Identifier |
+| Activity | 1 | 0->OFF, 1-> daylight, 2->HSL, 3->Effect |
 
 ### 4. Message ACTIVITY_STATUS
 
-
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| Value | 1 | 0->OFF, 1-> daylight, 2->HSL, 3->Effect |
 
 ### 5. Message BRIGHTNESS_GET
 
