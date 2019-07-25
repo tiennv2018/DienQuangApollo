@@ -143,7 +143,7 @@
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
-| index | 0->3 | kieu hieu ung co san, neu 0xFF thi se chay xoay vong tu 0->3 |
+| index | 1 | 0x00, 0x01, 0x02 hoac 0xFF, neu 0xFF thi se chay xoay vong tu 0->3 |
 | TID | 1 | Transaction Identifier |
 
 ``` Trong đèn có lưu dữ liệu của 3 loại hiệu ứng, Mỗi lần nhận lệnh này sẽ chuyển các hiệu ứng có sẵn này và chạy ```
@@ -152,6 +152,7 @@
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
+| index | 1 | 0x00, 0x01, 0x02 hoac 0xFF, neu 0xFF thi se chay xoay vong tu 0->3 |
 | TID | 1 | Transaction Identifier |
 
 ### 16. Message DEFAULT_EFFECT_STATUS
