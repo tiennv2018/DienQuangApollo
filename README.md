@@ -99,7 +99,7 @@
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
 | Lenght | 1 | Chiều dài của hiệu ứng tối đa là 12, chú ý chiều dài bao nhiêu thì dữ liệu hue, saturation, timer dài bấy nhiêu |
-| enable_dimer | 1 | Hiệu ứng đổi màu sử dụng dimer |
+| type run | 1 | 0-> dimer, 1-> khong su dung dimer, 2-> dimer mau ngau nhien, 3-> khong su dung dimer, mau ngau nhien|
 | lightness | 2 | độ sáng của hiệu ứng từ 0x0000 -> 0xFFFF |
 | hue | 2 | giá trị hue cho màu đầu tiên của hiệu ứng, từ 0->360 |
 | saturation | 2 |  giá trị saturation cho màu đầu tiên của hiệu ứng, từ 0->0xFFFF  |
@@ -113,7 +113,7 @@
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
 | Lenght | 1 | Chiều dài của hiệu ứng tối đa là 12, chú ý chiều dài bao nhiêu thì dữ liệu hue, saturation, timer dài bấy nhiêu |
-| enable_dimer | 1 | Hiệu ứng đổi màu sử dụng dimer |
+| type run | 1 | 0-> dimer, 1-> khong su dung dimer, 2-> dimer mau ngau nhien, 3-> khong su dung dimer, mau ngau nhien |
 | lightness | 2 | độ sáng của hiệu ứng từ 0x0000 -> 0xFFFF |
 | hue | 2 | giá trị hue cho màu đầu tiên của hiệu ứng, từ 0->360 |
 | saturation | 2 |  giá trị saturation cho màu đầu tiên của hiệu ứng, từ 0->0xFFFF  |
@@ -127,7 +127,7 @@
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
 | Lenght | 1 | Chiều dài của hiệu ứng tối đa là 12, chú ý chiều dài bao nhiêu thì dữ liệu hue, saturation, timer dài bấy nhiêu |
-| enable_dimer | 1 | Hiệu ứng đổi màu sử dụng dimer |
+| type run | 1 | 0-> dimer, 1-> khong su dung dimer, 2-> dimer mau ngau nhien, 3-> khong su dung dimer, mau ngau nhien |
 | lightness | 2 | độ sáng của hiệu ứng từ 0x0000 -> 0xFFFF |
 | hue | 2 | giá trị hue cho màu đầu tiên của hiệu ứng, từ 0->360 |
 | saturation | 2 |  giá trị saturation cho màu đầu tiên của hiệu ứng, từ 0->0xFFFF  |
