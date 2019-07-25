@@ -143,6 +143,7 @@
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
+| index | 0->3 | kieu hieu ung co san, neu 0xFF thi se chay xoay vong tu 0->3 |
 | TID | 1 | Transaction Identifier |
 
 ``` Trong đèn có lưu dữ liệu của 3 loại hiệu ứng, Mỗi lần nhận lệnh này sẽ chuyển các hiệu ứng có sẵn này và chạy ```
