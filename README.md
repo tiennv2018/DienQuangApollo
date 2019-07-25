@@ -157,9 +157,7 @@
 
 ### 16. Message DEFAULT_EFFECT_STATUS
 
-| Field | Size (octets) | Notes |
-| :--- | :--- | :--- | 
-| index | 1 | vị trí hiệu ứng đang chạy, từ 0->3 |
+``` tra ve Message EFFECT_STATUS ```
 
 ### 17. Message DFU_GET
 
