@@ -211,11 +211,11 @@
 | :--- | :--- | :--- | 
 | status | 1 | luôn luôn là 1, báo cho Client rằng đèn đã nhận được lệnh test light |
 
-### 21. Message VESION_GET
+### 25. Message VESION_GET
 
 ``` Lệnh này đọc về  firmware đèn, trả về message VERSION_STATUS ```
 
-### 24. Message VERSION_STATUS
+### 26. Message VERSION_STATUS
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
