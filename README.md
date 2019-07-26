@@ -219,6 +219,23 @@
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
-| status | 1 | frimware hiện tại |
+| major | 1 | Chuỗi phiên bản chính, chữ số hàng chục |
+| major | 1 | Chuỗi phiên bản chính, 1 chữ số hàng đơn vị |
+| space | 1 | dấu . |
+| minor | 1 | Chuỗi phiên bản phụ, chữ số hàng chục |
+| minor | 1 | Chuỗi phiên bản phụ, 1 chữ số hàng đơn vị |
+| space | 1 | dấu . |
+| build | 1 | Chuỗi phiên bản cấu tạo. Đánh dấu sự khác nhau trong cùng 1 phiên bản phụ (hàng nghìn) |
+| build | 1 | Chuỗi phiên bản cấu tạo. Đánh dấu sự khác nhau trong cùng 1 phiên bản phụ (hàng trăm)  |
+| build | 1 | Chuỗi phiên bản cấu tạo. Đánh dấu sự khác nhau trong cùng 1 phiên bản phụ (hàng chục)  |
+| build | 1 | Chuỗi phiên bản cấu tạo. Đánh dấu sự khác nhau trong cùng 1 phiên bản phụ (hàng đơn vị) |
 
+```
+Chỉ số major sẽ tăng mỗi khi: < break />
+- Có sự thay đổi lớn trong nhân hệ thống mà theo đó hệ thống mới có thể khác 1 phần hay hoàn toàn hệ thống cũ.
+Chỉ số minor sẽ tăng mỗi khi:
+- Có sự thay đổi phần core hệ thống mà không làm mất đi hoàn toàn tính tương thích trong cùng phiên bản chính.
+Chỉ số build sẽ tăng mỗi khi:
+- Có đóng gói gửi đi ra ngoài đội code nhằm các mục đích phát hành, thử nghiệm... (kể cả việc phát hành các phiên bản Closebeta, Openbeta, RC, Official version)
+```
 
