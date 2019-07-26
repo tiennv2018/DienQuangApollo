@@ -47,7 +47,7 @@
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
-| Activity | 1 | 0->OFF, 1-> daylight, 2->HSL, 3->Effect |
+| Activity | 1 | 1-> daylight, 2->HSL, 3->Effect |
 
 ``` Sau khi nhận lệnh này, đèn sẽ trả về message ACTIVITY_STATUS ```
 
@@ -56,7 +56,7 @@
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
-| Activity | 1 | 0->OFF, 1-> daylight, 2->HSL, 3->Effect |
+| Activity | 1 | 1-> daylight, 2->HSL, 3->Effect |
 
 ### 4. Message ACTIVITY_STATUS
 
