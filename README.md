@@ -35,6 +35,8 @@
 | 0xD5 | TEST_SET | Lệnh test đèn|
 | 0xD6 | TEST_SET_UNACKNOWLEDGED | Lệnh test đèn  |
 | 0xD7 | TEST_STATUS | Trạng thái test đèn |
+| 0xFE | VERSION_GET | Lệnh đọc về phiên bản firmware đèn hiện tại |
+| 0xFF | VERSION_STATUS | phiên bản firmware hiện tại |
 
 ### 1. Message ACTIVITY_GET
 
@@ -161,7 +163,7 @@
 
 ### 17. Message DFU_GET
 
-``` Lệnh này không có sẵn, vì khi vào DFU rồi thì kết nối đến đèn sẽ bị mất  ```
+``` luôn luôn trả về  Message DFU_STATUS với status = 0, vì khi đã vào dfu rồi thì thiết bị không còn connect proxy được nữa ```
 
 ### 18. Message DFU_SET
 
@@ -207,6 +209,16 @@
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
-| loop | 1 | số lần nhấp nháy còn lại |
+| status | 1 | luôn luôn là 1, báo cho Client rằng đèn đã nhận được lệnh test light |
+
+### 21. Message VESION_GET
+
+``` Lệnh này đọc về  firmware đèn, trả về message VERSION_STATUS ```
+
+### 24. Message VERSION_STATUS
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| status | 1 | frimware hiện tại |
 
 
