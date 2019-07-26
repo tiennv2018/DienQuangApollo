@@ -219,19 +219,19 @@
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
-| major | 1 | Chuỗi phiên bản chính, chữ số hàng chục |
-| major | 1 | Chuỗi phiên bản chính, 1 chữ số hàng đơn vị |
+| major | 1 | Chuỗi phiên bản chính, chữ số hàng chục định dạng text |
+| major | 1 | Chuỗi phiên bản chính, 1 chữ số hàng đơn vị định dạng text |
 | space | 1 | dấu . |
-| minor | 1 | Chuỗi phiên bản phụ, chữ số hàng chục |
-| minor | 1 | Chuỗi phiên bản phụ, 1 chữ số hàng đơn vị |
+| minor | 1 | Chuỗi phiên bản phụ, chữ số hàng chục định dạng text |
+| minor | 1 | Chuỗi phiên bản phụ, 1 chữ số hàng đơn vị định dạng text |
 | space | 1 | dấu . |
-| build | 1 | Chuỗi phiên bản cấu tạo. Đánh dấu sự khác nhau trong cùng 1 phiên bản phụ (hàng nghìn) |
-| build | 1 | Chuỗi phiên bản cấu tạo. Đánh dấu sự khác nhau trong cùng 1 phiên bản phụ (hàng trăm)  |
-| build | 1 | Chuỗi phiên bản cấu tạo. Đánh dấu sự khác nhau trong cùng 1 phiên bản phụ (hàng chục)  |
-| build | 1 | Chuỗi phiên bản cấu tạo. Đánh dấu sự khác nhau trong cùng 1 phiên bản phụ (hàng đơn vị) |
+| build | 1 | Chuỗi phiên bản cấu tạo. Đánh dấu sự khác nhau trong cùng 1 phiên bản phụ (hàng nghìn) định dạng text |
+| build | 1 | Chuỗi phiên bản cấu tạo. Đánh dấu sự khác nhau trong cùng 1 phiên bản phụ (hàng trăm)  định dạng text |
+| build | 1 | Chuỗi phiên bản cấu tạo. Đánh dấu sự khác nhau trong cùng 1 phiên bản phụ (hàng chục)  định dạng text |
+| build | 1 | Chuỗi phiên bản cấu tạo. Đánh dấu sự khác nhau trong cùng 1 phiên bản phụ (hàng đơn vị) định dạng text |
 
 ```
-Chỉ số major sẽ tăng mỗi khi: < break />
+Chỉ số major sẽ tăng mỗi khi:
 - Có sự thay đổi lớn trong nhân hệ thống mà theo đó hệ thống mới có thể khác 1 phần hay hoàn toàn hệ thống cũ.
 Chỉ số minor sẽ tăng mỗi khi:
 - Có sự thay đổi phần core hệ thống mà không làm mất đi hoàn toàn tính tương thích trong cùng phiên bản chính.
