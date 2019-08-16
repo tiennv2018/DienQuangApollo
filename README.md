@@ -354,7 +354,6 @@
 ### 48. Message TEMPTURATE STATUS
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
-| type | 1 | 0/1 => thay đổi màu kiểu dimer, thay đổi màu tức thì |
 | Teampeturate | 2 | chính là nhiệt độ màu đèn hiện tại |
 
 ### 49. Message VESION_GET
