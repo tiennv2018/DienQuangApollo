@@ -38,7 +38,7 @@
 | 0xD8 | POWER CONTROL GET | Đọc trạng thái nguồn |
 | 0xD9 | POWER CONTROL SET | bật, tắt đảo trạng thái đèn |
 | 0xDA | POWER CONTROL SET UNACKNOWLEDGED | bật, tắt đảo trạng thái đèn không xác nhận|
-| 0xDB | POWER CONTROL SET STATUS | Trạng thái power |
+| 0xDB | POWER CONTROL STATUS | Trạng thái power |
 | 0xDC | BRIGHTNESS GET | Đọc về độ sáng hiện tại |
 | 0xDE | BRIGHTNESS SET | set độ sáng đến giá trị truyền xuống |
 | 0xDF | BRIGHTNESS SET UNACKNOWLEDGED | set độ sáng đến giá trị truyền xuống không phản hồi |
@@ -234,11 +234,138 @@
 | :--- | :--- | :--- | 
 | status | 1 | luôn luôn là 1, báo cho Client rằng đèn đã nhận được lệnh test light |
 
-### 25. Message VESION_GET
+### 25. Message POWER CONTROL GET
+``` Lệnh này đọc về trạng thái test đèn, trả về message 	POWER CONTROL STATUS ```
+
+### 26. Message POWER CONTROL SET
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | tid cho message này |
+| cmd | 1 | 0/1/2 => off/on/toggle |
+
+### 27. Message POWER CONTROL SET UNACKNOWLEDGED
+``` tương tự như mesage POWER CONTROL SET nhưng không có trả lời từ thiết bị nhận ```
+
+### 28. Message POWER CONTROL STATUS
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| Value | 1 | 0->OFF, 1-> daylight, 2->HSL, 3->Effect |
+
+### 29. Message BRIGHTNESS GET
+``` trả về message BRIGHTNESS STATUS ```
+
+### 30. Message BRIGHTNESS SET
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | tid cho message này |
+| lightness | 2 | giá trị từ 0->0xFFFF |
+
+### 31. Message BRIGHTNESS SET UNACKNOWLEDGED
+``` tương tự như mesage BRIGHTNESS SET nhưng không có trả lời từ thiết bị nhận ```
+
+### 32. Message BRIGHTNESS STATUS
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- |
+| lightness | 2 | giá trị từ 0->0xFFFF |
+
+### 33. Message HSL GET
+``` trả về message HSL STATUS ```
+
+### 34. Message HSL SET
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | tid cho message này |
+| type | 1 | 0/1 => thay đổi màu kiểu dimer, thay đổi màu tức thì |
+| hue | 2 | giá trị từ 0->0xFFFF tương ứng với 0->360 |
+| saturation | 2 | giá trị từ 0->0xFFFF |
+| lightness | 2 | giá trị từ 0->0xFFFF |
+
+### 35. Message HSL SET UNACKNOWLEDGED
+``` tương tự như mesage HSL SET nhưng không có trả lời từ thiết bị nhận ```
+
+### 36. Message HSL STATUS
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | tid cho message này |
+| hue | 2 | giá trị từ 0->0xFFFF tương ứng với 0->360 |
+| saturation | 2 | giá trị từ 0->0xFFFF |
+| lightness | 2 | giá trị từ 0->0xFFFF |
+
+### 37. Message SATURATION GET
+``` trả về message SATURATION STATUS ```
+
+### 38. Message SATURATION SET
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | tid cho message này |
+| type | 1 | 0/1 => thay đổi màu kiểu dimer, thay đổi màu tức thì |
+| saturation | 2 | giá trị từ 0->0xFFFF |
+
+### 39. Message SATURATION SET UNACKNOWLEDGED
+``` tương tự như mesage SATURATION SET nhưng không có trả lời từ thiết bị nhận ```
+
+### 40. Message SATURATION STATUS
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | tid cho message này |
+| saturation | 2 | giá trị từ 0->0xFFFF |
+
+### 41. Message CTL GET
+``` trả về message CTL STATUS ```
+
+### 42. Message CTL SET
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | tid cho message này |
+| type | 1 | 0/1 => thay đổi màu kiểu dimer, thay đổi màu tức thì |
+| Teampeturate | 2 | chính là nhiệt độ màu hiện tại của đèn |
+| Lightness | 2 | giá trị từ 0->0xFFFF |
+
+### 43. Message CTL SET UNACKNOWLEDGED
+``` tương tự như mesage CTL SET nhưng không có trả lời từ thiết bị nhận ```
+
+### 44. Message CTL STATUS
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | tid cho message này |
+| Teampeturate | 2 | chính là nhiệt độ màu đèn hiện tại |
+| Lightness | 2 | giá trị từ 0->0xFFFF |
+
+### 45. Message TEMPTURATE GET
+``` trả về message TEMPTURATE STATUS ```
+
+### 46. Message TEMPTURATE SET
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | tid cho message này |
+| type | 1 | 0/1 => thay đổi màu kiểu dimer, thay đổi màu tức thì |
+| Teampeturate | 2 | chính là nhiệt độ màu đèn hỗ trợ |
+
+### 47. Message TEMPTURATE SET UNACKNOWLEDGED
+``` tương tự như mesage TEMPTURATE SET nhưng không có trả lời từ thiết bị nhận ```
+
+### 48. Message TEMPTURATE STATUS
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | tid cho message này |
+| type | 1 | 0/1 => thay đổi màu kiểu dimer, thay đổi màu tức thì |
+| Teampeturate | 2 | chính là nhiệt độ màu đèn hiện tại |
+
+### 49. Message VESION_GET
 
 ``` Lệnh này đọc về  firmware đèn, trả về message VERSION_STATUS ```
 
-### 26. Message VERSION_STATUS
+### 50. Message VERSION_STATUS
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
