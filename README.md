@@ -18,7 +18,7 @@
 | 0xC4 | BRIGHTNESS_CALIBRATION_GET | Lệnh đọc về độ sáng đèn |
 | 0xC5 | BRIGHTNESS_CALIBRATION_SET | Lệnh tăng hoặc giảm độ sáng đèn |
 | 0xC6 | BRIGHTNESS_CALIBRATION_SET_UNACKNOWLEDGED | Lệnh tăng hoặc giảm độ sáng đèn  |
-| 0xC7 | BRIGHTNESS_STATUS | Trạng thái độ sáng đèn |
+| 0xC7 | BRIGHTNESS_CALIBRATION_STATUS | Trạng thái độ sáng đèn |
 | 0xC8 | EFFECT_GET | Đọc về hiệu ứng đang chạy |
 | 0xC9 | EFFECT_SET | Lệnh set hiệu ứng |
 | 0xCA | EFFECT_SET_UNACKNOWLEDGED | Lệnh set hiệu ứng |
