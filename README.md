@@ -58,7 +58,7 @@
 | 0xCD | TEMPTURATE GET | đọc về giá trị TEMPTURATE hiện tại trong đèn |
 | 0xCE | TEMPTURATE SET | set giá trị TEMPTURATE cho đèn |
 | 0xCF | TEMPTURATE SET UNACKNOWLEDGED | set giá trị TEMPTURATE cho đèn, không phản hồi |
-| 0xC0 | TEMPTURATE STATUS | giá trị TEMPTURATE hiện tại |
+| 0xD0 | TEMPTURATE STATUS | giá trị TEMPTURATE hiện tại |
 | 0xFE | VERSION_GET | Lệnh đọc về phiên bản firmware đèn hiện tại |
 | 0xFF | VERSION_STATUS | phiên bản firmware hiện tại |
 ### 1. Message ACTIVITY_GET
