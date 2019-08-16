@@ -291,7 +291,6 @@
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
-| TID | 1 | tid cho message này |
 | hue | 2 | giá trị từ 0->0xFFFF tương ứng với 0->360 |
 | saturation | 2 | giá trị từ 0->0xFFFF |
 | lightness | 2 | giá trị từ 0->0xFFFF |
@@ -314,7 +313,6 @@
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
-| TID | 1 | tid cho message này |
 | saturation | 2 | giá trị từ 0->0xFFFF |
 
 ### 41. Message CTL GET
@@ -336,7 +334,6 @@
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
-| TID | 1 | tid cho message này |
 | Teampeturate | 2 | chính là nhiệt độ màu đèn hiện tại |
 | Lightness | 2 | giá trị từ 0->0xFFFF |
 
@@ -357,7 +354,6 @@
 ### 48. Message TEMPTURATE STATUS
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
-| TID | 1 | tid cho message này |
 | type | 1 | 0/1 => thay đổi màu kiểu dimer, thay đổi màu tức thì |
 | Teampeturate | 2 | chính là nhiệt độ màu đèn hiện tại |
 
