@@ -87,21 +87,11 @@
 | :--- | :--- | :--- | 
 | Value | 1 | 0->OFF, 1-> daylight, 2->HSL, 3->Effect |
 
-### 5. Message BRIGHTNESS_GET
+### 5. Message BRIGHTNESS_CALIBRATION_GET
 
-``` Sau khi nhận lệnh này, đèn sẽ trả về message BRIGHTNESS_STATUS ```
+``` Sau khi nhận lệnh này, đèn sẽ trả về message BRIGHTNESS_CALIBRATION_SET_UNACKNOWLEDGED ```
 
-### 6. Message BRIGHTNESS_SET
-
-| Field | Size (octets) | Notes |
-| :--- | :--- | :--- | 
-| TID | 1 | Transaction Identifier |
-| Type | 1 | nếu bằng 0-> giảm, bằng 1-> tăng|
-| Value | 2 | giá trị cần tăng hoặc giảm |
-
-``` Sau khi nhận lệnh này, đèn sẽ trả về message BRIGHTNESS_STATUS ```
-
-### 7. Message BRIGHTNESS_SET_UNACKNOWLEDGED
+### 6. Message BRIGHTNESS_CALIBRATION_SET
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
@@ -109,7 +99,17 @@
 | Type | 1 | nếu bằng 0-> giảm, bằng 1-> tăng|
 | Value | 2 | giá trị cần tăng hoặc giảm |
 
-### 8. Message BRIGHTNESS_STATUS
+``` Sau khi nhận lệnh này, đèn sẽ trả về message BRIGHTNESS_CALIBRATION_SET_UNACKNOWLEDGED ```
+
+### 7. Message BRIGHTNESS_CALIBRATION_SET_UNACKNOWLEDGED
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | Transaction Identifier |
+| Type | 1 | nếu bằng 0-> giảm, bằng 1-> tăng|
+| Value | 2 | giá trị cần tăng hoặc giảm |
+
+### 8. Message BRIGHTNESS_CALIBRATION_SET_UNACKNOWLEDGED
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
