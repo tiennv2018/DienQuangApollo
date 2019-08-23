@@ -42,23 +42,23 @@
 | 0xDC | BRIGHTNESS GET | Đọc về độ sáng hiện tại |
 | 0xDE | BRIGHTNESS SET | set độ sáng đến giá trị truyền xuống |
 | 0xDF | BRIGHTNESS SET UNACKNOWLEDGED | set độ sáng đến giá trị truyền xuống không phản hồi |
-| 0xC0 | BRIGHTNESS STATUS | Độ sáng hiện tại |
-| 0xC1 | HSL GET | đọc về giá trị HSL hiện tại trong đèn |
-| 0xC2 | HSL SET | set giá trị hsl cho đèn |
-| 0xC3 | HSL SET UNACKNOWLEDGED | set giá trị hsl cho đèn, không phản hồi |
-| 0xC4 | HSL STATUS | giá trị hsl hiện tại |
-| 0xC5 | SATURATION GET | đọc về giá trị SATURATION hiện tại trong đèn |
-| 0xC6 | SATURATION SET | set giá trị SATURATION cho đèn |
-| 0xC7 | SATURATION SET UNACKNOWLEDGED | set giá trị SATURATION cho đèn, không phản hồi |
-| 0xC8 | SATURATION STATUS | giá trị SATURATION hiện tại |
-| 0xC9 | CTL GET | đọc về giá trị CTL hiện tại trong đèn |
-| 0xCA | CTL SET | set giá trị CTL cho đèn |
-| 0xCB | CTL SET UNACKNOWLEDGED | set giá trị CTL cho đèn, không phản hồi |
-| 0xCC | CTL STATUS | giá trị CTL hiện tại |
-| 0xCD | TEMPTURATE GET | đọc về giá trị TEMPTURATE hiện tại trong đèn |
-| 0xCE | TEMPTURATE SET | set giá trị TEMPTURATE cho đèn |
-| 0xCF | TEMPTURATE SET UNACKNOWLEDGED | set giá trị TEMPTURATE cho đèn, không phản hồi |
-| 0xD0 | TEMPTURATE STATUS | giá trị TEMPTURATE hiện tại |
+| 0xE0 | BRIGHTNESS STATUS | Độ sáng hiện tại |
+| 0xE1 | HSL GET | đọc về giá trị HSL hiện tại trong đèn |
+| 0xE2 | HSL SET | set giá trị hsl cho đèn |
+| 0xE3 | HSL SET UNACKNOWLEDGED | set giá trị hsl cho đèn, không phản hồi |
+| 0xE4 | HSL STATUS | giá trị hsl hiện tại |
+| 0xE5 | SATURATION GET | đọc về giá trị SATURATION hiện tại trong đèn |
+| 0xE6 | SATURATION SET | set giá trị SATURATION cho đèn |
+| 0xE7 | SATURATION SET UNACKNOWLEDGED | set giá trị SATURATION cho đèn, không phản hồi |
+| 0xE8 | SATURATION STATUS | giá trị SATURATION hiện tại |
+| 0xE9 | CTL GET | đọc về giá trị CTL hiện tại trong đèn |
+| 0xEA | CTL SET | set giá trị CTL cho đèn |
+| 0xEB | CTL SET UNACKNOWLEDGED | set giá trị CTL cho đèn, không phản hồi |
+| 0xEC | CTL STATUS | giá trị CTL hiện tại |
+| 0xED | TEMPTURATE GET | đọc về giá trị TEMPTURATE hiện tại trong đèn |
+| 0xEE | TEMPTURATE SET | set giá trị TEMPTURATE cho đèn |
+| 0xEF | TEMPTURATE SET UNACKNOWLEDGED | set giá trị TEMPTURATE cho đèn, không phản hồi |
+| 0xE0 | TEMPTURATE STATUS | giá trị TEMPTURATE hiện tại |
 | 0xFE | VERSION_GET | Lệnh đọc về phiên bản firmware đèn hiện tại |
 | 0xFF | VERSION_STATUS | phiên bản firmware hiện tại |
 ### 1. Message ACTIVITY_GET
@@ -251,7 +251,7 @@
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
-| Value | 1 | 0->OFF, 1-> daylight, 2->HSL, 3->Effect |
+| Value | 1 | 0->OFF, 1-> ON |
 
 ### 29. Message BRIGHTNESS GET
 ``` trả về message BRIGHTNESS STATUS ```
