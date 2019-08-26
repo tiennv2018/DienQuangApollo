@@ -184,11 +184,7 @@
 
 ``` tra ve Message EFFECT_STATUS ```
 
-### 17. Message DFU_GET
-
-``` luôn luôn trả về  Message DFU_STATUS với status = 0, vì khi đã vào dfu rồi thì thiết bị không còn connect proxy được nữa ```
-
-### 18. Message DFU_SET
+### 17. Message DFU_SET
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
@@ -196,23 +192,19 @@
 
 ``` Sau khi nhận lệnh này, đèn sẽ trả về message DFU_STATUS ```
 
-### 19. Message DFU_SET_UNACKNOWLEDGED
+### 18. Message DFU_SET_UNACKNOWLEDGED
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
 
-### 20. Message DFU_STATUS
+### 19. Message DFU_STATUS
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | Status | 1 | Trạng thái thực hiện 0 hoặc 1 |
 
-### 21. Message TEST_GET
-
-``` Lệnh này đọc về trạng thái test đèn, trả về message TEST_STATUS ```
-
-### 22. Message TEST_SET
+### 20. Message TEST_SET
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
@@ -221,60 +213,60 @@
 
 ``` Sau khi nhận lệnh này, đèn sẽ trả về message TEST_STATUS ```
 
-### 23. Message TEST_SET_UNACKNOWLEDGED
+### 21. Message TEST_SET_UNACKNOWLEDGED
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
 | loop | 1 | số lần nhấp nháy, từ 0-> 255 |
 
-### 24. Message TEST_STATUS
+### 22. Message TEST_STATUS
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | status | 1 | luôn luôn là 1, báo cho Client rằng đèn đã nhận được lệnh test light |
 
-### 25. Message POWER CONTROL GET
+### 23. Message POWER CONTROL GET
 ``` Lệnh này đọc về trạng thái test đèn, trả về message 	POWER CONTROL STATUS ```
 
-### 26. Message POWER CONTROL SET
+### 24. Message POWER CONTROL SET
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | tid cho message này |
 | cmd | 1 | 0/1/2 => off/on/toggle |
 
-### 27. Message POWER CONTROL SET UNACKNOWLEDGED
+### 25. Message POWER CONTROL SET UNACKNOWLEDGED
 ``` tương tự như mesage POWER CONTROL SET nhưng không có trả lời từ thiết bị nhận ```
 
-### 28. Message POWER CONTROL STATUS
+### 26. Message POWER CONTROL STATUS
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | Value | 1 | 0->OFF, 1-> ON |
 
-### 29. Message BRIGHTNESS GET
+### 27. Message BRIGHTNESS GET
 ``` trả về message BRIGHTNESS STATUS ```
 
-### 30. Message BRIGHTNESS SET
+### 28. Message BRIGHTNESS SET
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | tid cho message này |
 | lightness | 2 | giá trị từ 0->0xFFFF |
 
-### 31. Message BRIGHTNESS SET UNACKNOWLEDGED
+### 29. Message BRIGHTNESS SET UNACKNOWLEDGED
 ``` tương tự như mesage BRIGHTNESS SET nhưng không có trả lời từ thiết bị nhận ```
 
-### 32. Message BRIGHTNESS STATUS
+### 30. Message BRIGHTNESS STATUS
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- |
 | lightness | 2 | giá trị từ 0->0xFFFF |
 
-### 33. Message HSL GET
+### 31. Message HSL GET
 ``` trả về message HSL STATUS ```
 
-### 34. Message HSL SET
+### 32. Message HSL SET
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
@@ -284,10 +276,10 @@
 | saturation | 2 | giá trị từ 0->0xFFFF |
 | lightness | 2 | giá trị từ 0->0xFFFF |
 
-### 35. Message HSL SET UNACKNOWLEDGED
+### 33. Message HSL SET UNACKNOWLEDGED
 ``` tương tự như mesage HSL SET nhưng không có trả lời từ thiết bị nhận ```
 
-### 36. Message HSL STATUS
+### 34. Message HSL STATUS
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
@@ -295,10 +287,10 @@
 | saturation | 2 | giá trị từ 0->0xFFFF |
 | lightness | 2 | giá trị từ 0->0xFFFF |
 
-### 37. Message SATURATION GET
+### 35. Message SATURATION GET
 ``` trả về message SATURATION STATUS ```
 
-### 38. Message SATURATION SET
+### 36. Message SATURATION SET
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
@@ -306,19 +298,19 @@
 | type | 1 | 0/1 => thay đổi màu kiểu dimer, thay đổi màu tức thì |
 | saturation | 2 | giá trị từ 0->0xFFFF |
 
-### 39. Message SATURATION SET UNACKNOWLEDGED
+### 37. Message SATURATION SET UNACKNOWLEDGED
 ``` tương tự như mesage SATURATION SET nhưng không có trả lời từ thiết bị nhận ```
 
-### 40. Message SATURATION STATUS
+### 38. Message SATURATION STATUS
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | saturation | 2 | giá trị từ 0->0xFFFF |
 
-### 41. Message CTL GET
+### 39. Message CTL GET
 ``` trả về message CTL STATUS ```
 
-### 42. Message CTL SET
+### 40. Message CTL SET
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
@@ -326,20 +318,20 @@
 | Teampeturate | 2 | chính là nhiệt độ màu hiện tại của đèn |
 | Lightness | 2 | giá trị từ 0->0xFFFF |
 
-### 43. Message CTL SET UNACKNOWLEDGED
+### 41. Message CTL SET UNACKNOWLEDGED
 ``` tương tự như mesage CTL SET nhưng không có trả lời từ thiết bị nhận ```
 
-### 44. Message CTL STATUS
+### 42. Message CTL STATUS
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | Teampeturate | 2 | chính là nhiệt độ màu đèn hiện tại |
 | Lightness | 2 | giá trị từ 0->0xFFFF |
 
-### 45. Message TEMPTURATE GET
+### 43. Message TEMPTURATE GET
 ``` trả về message TEMPTURATE STATUS ```
 
-### 46. Message TEMPTURATE SET
+### 44. Message TEMPTURATE SET
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
@@ -347,30 +339,30 @@
 | type | 1 | 0/1 => thay đổi màu kiểu dimer, thay đổi màu tức thì |
 | Teampeturate | 2 | chính là nhiệt độ màu đèn hỗ trợ |
 
-### 47. Message TEMPTURATE SET UNACKNOWLEDGED
+### 45. Message TEMPTURATE SET UNACKNOWLEDGED
 ``` tương tự như mesage TEMPTURATE SET nhưng không có trả lời từ thiết bị nhận ```
 
-### 48. Message TEMPTURATE STATUS
+### 46. Message TEMPTURATE STATUS
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | Teampeturate | 2 | chính là nhiệt độ màu đèn hiện tại |
 
 
 
-### 49. Message TEMPTURATE RANGE GET
+### 47. Message TEMPTURATE RANGE GET
 ``` trả về message TEMPTURATE STATUS ```
 
-### 50. Message TEMPTURATE RANGE STATUS
+### 48. Message TEMPTURATE RANGE STATUS
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | Range_Max | 2 | giá trị nhiệt độ màu cao nhất đèn hỗ trợ |
 | Range_Min | 2 | giá trị nhiệt độ màu thấp nhất đèn hỗ trợ |
 
-### 51. Message VESION_GET
+### 49. Message VESION_GET
 
 ``` Lệnh này đọc về  firmware đèn, trả về message VERSION_STATUS ```
 
-### 52. Message VERSION_STATUS
+### 50. Message VERSION_STATUS
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
