@@ -336,7 +336,6 @@
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | tid cho message này |
-| type | 1 | 0/1 => thay đổi màu kiểu dimer, thay đổi màu tức thì |
 | Teampeturate | 2 | chính là nhiệt độ màu đèn hỗ trợ |
 
 ### 45. Message TEMPTURATE SET UNACKNOWLEDGED
