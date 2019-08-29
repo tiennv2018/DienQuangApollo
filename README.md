@@ -83,10 +83,7 @@ ví dụ dữ liệu để chuyển qua daylight như sau:
 
 ### 3. Message ACTIVITY_SET_UNACKNOWLEDGED
 
-| Field | Size (octets) | Notes |
-| :--- | :--- | :--- | 
-| TID | 1 | Transaction Identifier |
-| Activity | 1 | 1-> daylight, 2->HSL, 3->Effect |
+tương tự lệnh ACTIVITY_SET nhưng sẽ không có phản hồi ACTIVITY_STATUS từ đèn khi nhận được lênh này
 
 ### 4. Message ACTIVITY_STATUS
 
@@ -106,17 +103,19 @@ ví dụ dữ liệu để chuyển qua daylight như sau:
 | Type | 1 | nếu bằng 0-> giảm, bằng 1-> tăng|
 | Value | 2 | giá trị cần tăng hoặc giảm |
 
+ví dụ để giảm độ sáng hiện tại của đèn đi 0xFF giá trị như sau:
+
+| byte | 0 | 1 | 2 |
+| :---: | :---: | :---: | :---: |
+| giá trị | 0x00 | 0x64 | 00 |
+
 ``` Sau khi nhận lệnh này, đèn sẽ trả về message BRIGHTNESS_CALIBRATION_SET_UNACKNOWLEDGED ```
 
 ### 7. Message BRIGHTNESS_CALIBRATION_SET_UNACKNOWLEDGED
 
-| Field | Size (octets) | Notes |
-| :--- | :--- | :--- | 
-| TID | 1 | Transaction Identifier |
-| Type | 1 | nếu bằng 0-> giảm, bằng 1-> tăng|
-| Value | 2 | giá trị cần tăng hoặc giảm |
-
-### 8. Message BRIGHTNESS_CALIBRATION_SET_UNACKNOWLEDGED
+tương tự lệnh BRIGHTNESS_CALIBRATION_SET nhưng sẽ không có phản hồi BRIGHTNESS_CALIBRATION_STATUS từ đèn khi nhận được lênh này
+ 
+### 8. Message BRIGHTNESS_CALIBRATION_STATUS
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
@@ -137,7 +136,14 @@ ví dụ dữ liệu để chuyển qua daylight như sau:
 | saturation | 2 |  giá trị saturation cho màu đầu tiên của hiệu ứng, từ 0->0xFFFF  |
 | timer | 2 | thời gian duy trì màu đầu tiên, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
 
-`` Chú ý: nếu len=1 thì như trên, còn nếu len=n thì sẽ lặp lại n-1 lần từ byte hue đến byte timer sau khung truyền trên, sau khi nhận lệnh này, đèn sẽ trả về message EFFECT_STATUS ``
+ví dụ để gửi hiểu ứng luân phiên giữa màu đỏ sáng 1s và màu xanh lá sáng 2s như sau:
+
+| byte | tid | Length | type run | lb_lightness | hb_lightness | lb_hue | hb_hue | lb_saturation | hb_saturation | lb_timer | hb_timer | lb_hue | hb_hue | lb_saturation | hb_saturation | lb_timer | hb_timer | 
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| giá trị | 0x00 | 0x02 | 0x00 | 0x00 | 0x80 | 0x00 | 0x00 | 0xFF | 0xFF | 0xE8 | 0x03 | 0x55 | 0x55 | 0xFF | 0xFF | 0xD0 | 0x07 | 
+
+chú ý: lenght ở ví dụ là 2 vì chỉ có 2 màu là đỏ và xanh lá
+
 
 ### 11. Message EFFECT_SET_UNACKNOWLEDGED
 
