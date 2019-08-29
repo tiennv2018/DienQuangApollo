@@ -105,9 +105,9 @@ tương tự lệnh ACTIVITY_SET nhưng sẽ không có phản hồi ACTIVITY_ST
 
 ví dụ để giảm độ sáng hiện tại của đèn đi 0xFF giá trị như sau:
 
-| byte | 0 | 1 | 2 |
-| :---: | :---: | :---: | :---: |
-| giá trị | 0x00 | 0x64 | 00 |
+| byte | tid | type | lb_value | hb_value |
+| :---: | :---: | :---: | :---: | :---: |
+| giá trị | 0x00 | 0x00 | 0x64 | 00 |
 
 ``` Sau khi nhận lệnh này, đèn sẽ trả về message BRIGHTNESS_CALIBRATION_SET_UNACKNOWLEDGED ```
 
@@ -139,7 +139,7 @@ tương tự lệnh BRIGHTNESS_CALIBRATION_SET nhưng sẽ không có phản h�
 ví dụ để gửi hiểu ứng luân phiên giữa màu đỏ sáng 1s và màu xanh lá sáng 2s như sau:
 
 | byte | tid | Length | type run | lb_lightness | hb_lightness | lb_hue | hb_hue | lb_saturation | hb_saturation | lb_timer | hb_timer | lb_hue | hb_hue | lb_saturation | hb_saturation | lb_timer | hb_timer | 
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | giá trị | 0x00 | 0x02 | 0x00 | 0x00 | 0x80 | 0x00 | 0x00 | 0xFF | 0xFF | 0xE8 | 0x03 | 0x55 | 0x55 | 0xFF | 0xFF | 0xD0 | 0x07 | 
 
 chú ý: lenght ở ví dụ là 2 vì chỉ có 2 màu là đỏ và xanh lá
