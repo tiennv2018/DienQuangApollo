@@ -72,7 +72,8 @@
 | TID | 1 | Transaction Identifier |
 | Activity | 1 | 1-> daylight, 2->HSL, 3->Effect |
 
-ví dụ dữ liệu để chuyển qua daylight như sau.
+ví dụ dữ liệu để chuyển qua daylight như sau:
+
 | byte | 0 | 1 |
 | :---: | :---: | :---: |
 | giá trị | 0x00 | 0x00|
