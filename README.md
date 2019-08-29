@@ -74,7 +74,7 @@
 
 ví dụ dữ liệu để chuyển qua daylight như sau:
 
-| byte | 0 | 1 |
+| byte | tid | activity |
 | :---: | :---: | :---: |
 | giá trị | 0x00 | 0x00|
 
