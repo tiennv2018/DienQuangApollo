@@ -132,7 +132,7 @@ tương tự lệnh BRIGHTNESS_CALIBRATION_SET nhưng sẽ không có phản h�
 | Lenght | 1 | Chiều dài của hiệu ứng tối đa là 12, chú ý chiều dài bao nhiêu thì dữ liệu hue, saturation, timer dài bấy nhiêu |
 | type run | 1 | 0-> dimer, 1-> khong su dung dimer, 2-> dimer mau ngau nhien, 3-> khong su dung dimer, mau ngau nhien|
 | lightness | 2 | độ sáng của hiệu ứng từ 0x0000 -> 0xFFFF |
-| hue | 2 | giá trị hue cho màu đầu tiên của hiệu ứng, từ 0->360 |
+| hue | 2 | giá trị hue cho màu đầu tiên của hiệu ứng, từ 0->0xFFFF |
 | saturation | 2 |  giá trị saturation cho màu đầu tiên của hiệu ứng, từ 0->0xFFFF  |
 | timer | 2 | thời gian duy trì màu đầu tiên, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
 
