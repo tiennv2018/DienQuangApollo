@@ -109,7 +109,7 @@ ví dụ để giảm độ sáng hiện tại của đèn đi 0xFF giá trị n
 | :---: | :---: | :---: | :---: | :---: |
 | giá trị | 0x00 | 0x00 | 0x64 | 00 |
 
-``` Sau khi nhận lệnh này, đèn sẽ trả về message BRIGHTNESS_CALIBRATION_SET_UNACKNOWLEDGED ```
+``` Sau khi nhận lệnh này, đèn sẽ trả về message BRIGHTNESS_CALIBRATION_STATUS ```
 
 ### 7. Message BRIGHTNESS_CALIBRATION_SET_UNACKNOWLEDGED
 
@@ -122,7 +122,7 @@ tương tự lệnh BRIGHTNESS_CALIBRATION_SET nhưng sẽ không có phản h�
 | Value | 2 | giá trị độ sáng hiện tại |
 
 ### 9. Message EFFECT_GET
-``` Sau khi nhận lệnh này, đèn sẽ trả về message ACTIVITY_STATUS ```
+``` Sau khi nhận lệnh này, đèn sẽ trả về message EFFECT_STATUS ```
 
 ### 10. Message EFFECT_SET
 
@@ -147,17 +147,7 @@ chú ý: lenght ở ví dụ là 2 vì chỉ có 2 màu là đỏ và xanh lá, 
 
 ### 11. Message EFFECT_SET_UNACKNOWLEDGED
 
- | Field | Size (octets) | Notes |
-| :--- | :--- | :--- | 
-| TID | 1 | Transaction Identifier |
-| Lenght | 1 | Chiều dài của hiệu ứng tối đa là 12, chú ý chiều dài bao nhiêu thì dữ liệu hue, saturation, timer dài bấy nhiêu |
-| type run | 1 | 0-> dimer, 1-> khong su dung dimer, 2-> dimer mau ngau nhien, 3-> khong su dung dimer, mau ngau nhien |
-| lightness | 2 | độ sáng của hiệu ứng từ 0x0000 -> 0xFFFF |
-| hue | 2 | giá trị hue cho màu đầu tiên của hiệu ứng, từ 0->360 |
-| saturation | 2 |  giá trị saturation cho màu đầu tiên của hiệu ứng, từ 0->0xFFFF  |
-| timer | 2 | thời gian duy trì màu đầu tiên, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
-
-`` Chú ý: nếu len=1 thì như trên, còn nếu len=n thì sẽ lặp lại n-1 lần từ byte hue đến byte timer sau khung truyền trên ``
+tương tự lệnh EFFECT_SET nhưng sẽ không có phản hồi EFFECT_STATUS từ đèn khi nhận được lênh này
 
 ### 12. Message EFFECT_STATUS
 
