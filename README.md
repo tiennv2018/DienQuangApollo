@@ -129,7 +129,7 @@ tương tự lệnh BRIGHTNESS_CALIBRATION_SET nhưng sẽ không có phản h�
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
-| Lenght | 1 | Chiều dài của hiệu ứng tối đa là 12, chú ý chiều dài bao nhiêu thì dữ liệu hue, saturation, timer dài bấy nhiêu |
+| Lenght | 1 | Chiều dài của hiệu ứng tối đa là 12, chú ý chiều dài bao nhiêu thì dữ liệu lightness, hue, saturation, timer dài bấy nhiêu |
 | type run | 1 | 0-> dimer, 1-> khong su dung dimer, 2-> dimer mau ngau nhien, 3-> khong su dung dimer, mau ngau nhien|
 | lightness | 2 | độ sáng của hiệu ứng từ 0x0000 -> 0xFFFF |
 | hue | 2 | giá trị hue cho màu đầu tiên của hiệu ứng, từ 0->0xFFFF |
@@ -138,9 +138,9 @@ tương tự lệnh BRIGHTNESS_CALIBRATION_SET nhưng sẽ không có phản h�
 
 ví dụ để gửi hiểu ứng luân phiên giữa màu đỏ sáng 1s và màu xanh lá sáng 2s như sau:
 
-| byte | tid | Length | type run | lb_lightness | hb_lightness | lb_hue | hb_hue | lb_saturation | hb_saturation | lb_timer | hb_timer | lb_hue | hb_hue | lb_saturation | hb_saturation | lb_timer | hb_timer | 
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| giá trị | 0x00 | 0x02 | 0x00 | 0x00 | 0x80 | 0x00 | 0x00 | 0xFF | 0xFF | 0xE8 | 0x03 | 0x55 | 0x55 | 0xFF | 0xFF | 0xD0 | 0x07 | 
+| byte | tid | Length | type run | lb_lightness | hb_lightness | lb_hue | hb_hue | lb_saturation | hb_saturation | lb_timer | hb_timer |  lb_lightness | hb_lightness | lb_hue | hb_hue | lb_saturation | hb_saturation | lb_timer | hb_timer | 
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| giá trị | 0x00 | 0x02 | 0x00 | 0x00 | 0x80 | 0x00 | 0x00 | 0xFF | 0xFF | 0xE8 | 0x03 | 0xFF | 0xFF | 0x55 | 0x55 | 0xFF | 0xFF | 0xD0 | 0x07 | 
 
 chú ý: lenght ở ví dụ là 2 vì chỉ có 2 màu là đỏ và xanh lá
 
