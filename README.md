@@ -140,7 +140,7 @@ ví dụ để gửi hiểu ứng luân phiên giữa màu đỏ sáng 1s và m�
 
 | byte | tid | Length | type run | lb_hue | hb_hue | lb_saturation | hb_saturation | lb_lightness | hb_lightness | lb_timer | hb_timer | lb_hue | hb_hue | lb_saturation | hb_saturation | lb_lightness | hb_lightness | lb_timer | hb_timer | 
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| giá trị | 0x00 | 0x02 | 0x00 | 0x00 | 0x00 | 0xFF | 0xFF | 0xE8 | 0x03 | 0x00 | 0x80 | 0x55 | 0x55 | 0xFF | 0xFF | 0x00 | 0x80 | 0xD0 | 0x07 | 
+| giá trị | 0x00 | 0x02 | 0x00 | 0x00 | 0x00 | 0xFF | 0xFF | 0x00 | 0x80 | 0xE8 | 0x03 | 0x55 | 0x55 | 0xFF | 0xFF | 0x00 | 0x80 | 0xD0 | 0x07 | 
 
 chú ý: lenght ở ví dụ là 2 vì chỉ có 2 màu là đỏ và xanh lá, ở chế độ hsl màu sẽ đậm nhất khi brightness là 50%
 
