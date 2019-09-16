@@ -180,8 +180,8 @@ tương tự lệnh EFFECT_SET nhưng sẽ không có phản hồi EFFECT_STATUS
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
-| index | 1 | 0x00, 0x01, 0x02 hoac 0xFF, neu 0xFF thi se chay xoay vong tu 0->3 |
 | TID | 1 | Transaction Identifier |
+| index | 1 | 0x00, 0x01, 0x02 hoac 0xFF, neu 0xFF thi se chay xoay vong tu 0->3 |
 
 ### 16. Message DEFAULT_EFFECT_STATUS
 
