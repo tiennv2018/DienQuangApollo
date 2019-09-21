@@ -59,21 +59,43 @@
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
-| ssid | n | ssid cần kết nối |
+| token | n | token cần setup |
 
 ### 7. Message TOKEN_SET_UNACKNOWLEDGED
 
 | Field | Size (octets) | Notes |
-| :--- | :--- | :--- |
-| ssid length | 1 | chiều dài của ssid |
-| ssid | n | ssid cần kết nối |
-| password | m | mật khẩu tương ứng với ssid |
+| :--- | :--- | :--- | 
+| TID | 1 | Transaction Identifier |
+| token | n | token cần setup |
 
 ### 8. Message TOKEN_STATUS
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- |
-| ssid length | 1 | chiều dài của ssid |
-| ssid | n | ssid cần kết nối |
-| password | m | mật khẩu tương ứng với ssid |
+| token | n | token hiện tại |
+
+### 9. Message USER_GET
+
+``` Sau khi nhận lệnh này, đèn sẽ trả về message TOKEN_STATUS ```
+
+### 10. Message USER_SET
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | Transaction Identifier |
+| user id | n | user id cần setup |
+
+### 11. Message USER_SET_UNACKNOWLEDGED
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | Transaction Identifier |
+| user id | n | user id cần setup |
+
+### 12. Message USER_STATUS
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- |
+| user id | n | user id hiện tại |
+
 
