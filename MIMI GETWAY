@@ -1,0 +1,38 @@
+# KHUNG TRUYỀN 
+
+| OPCODE | Kiểu lệnh | mô tả |
+| :---: | :--- | :--- | 
+| 0xF0 | WIFI_GET | Lệnh đọc về ssid và mật khẩu wifi đang kết nối |
+| 0xF1 | WIFI_SET | Lệnh cài đặt ssid và mật khẩu wifi để kết nối |
+| 0xF2 | WIFI_SET_UNACKNOWLEDGED | Lệnh cài đặt ssid và mật khẩu wifi để kết nối  |
+| 0xF3 | WIFI_STATUS | Trạng thái ssid và mật khẩu đang kết nối |
+| 0xF4 | TOKEN_CALIBRATION_GET | lệnh đọc về token đang kết nối lên cloud |
+| 0xF5 | TOKEN_CALIBRATION_SET | lệnh set token cho việc kết nối lên cloud |
+| 0xF6 | TOKEN_CALIBRATION_SET_UNACKNOWLEDGED | lệnh set token cho việc kết nối lên cloud |
+| 0xF7 | TOKEN_CALIBRATION_STATUS | trạng thái token |
+| 0xF8 | USER_GET | Lệnh đọc về user id đang kết nối lên cloud |
+| 0xF9 | USER_SET | Lệnh cài đặt user id cho việc kết nối lên cloud |
+| 0xFA | USER_SET_UNACKNOWLEDGED | Lệnh cài đặt user id cho việc kết nối lên cloud |
+| 0xFB | USER_STATUS | trạng thái user id đang kết nối |
+| 0xD0 | DFU_SET | Lệnh đưa mini getway vào DFU |
+| 0xD1 | DFU_SET_UNACKNOWLEDGED | Lệnh đưa mini getway vào DFU |
+| 0xD2 | DFU_STATUS | trạng thái vào DFU |
+| 0xFE | VERSION_GET | Lệnh đọc về phiên bản firmware đèn hiện tại |
+| 0xFF | VERSION_STATUS | phiên bản firmware hiện tại |
+
+### 1. Message ACTIVITY_GET
+
+``` Sau khi nhận lệnh này, đèn sẽ trả về message ACTIVITY_STATUS ```
+
+### 2. Message ACTIVITY_SET
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | Transaction Identifier |
+| Activity | 1 | 1-> daylight, 2->HSL, 3->Effect |
+
+ví dụ dữ liệu để chuyển qua daylight như sau:
+
+| byte | tid | activity |
+| :---: | :---: | :---: |
+| giá trị | 0x00 | 0x00|
