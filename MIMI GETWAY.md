@@ -1,4 +1,4 @@
-# KHUNG TRUYỀN 
+# KHUNG TRUYỀN MINI GETWAY
 
 | OPCODE | Kiểu lệnh | mô tả |
 | :---: | :--- | :--- | 
@@ -20,19 +20,26 @@
 | 0xFE | VERSION_GET | Lệnh đọc về phiên bản firmware đèn hiện tại |
 | 0xFF | VERSION_STATUS | phiên bản firmware hiện tại |
 
-### 1. Message ACTIVITY_GET
+### 1. Message WIFI_GET
 
-``` Sau khi nhận lệnh này, đèn sẽ trả về message ACTIVITY_STATUS ```
+``` Sau khi nhận lệnh này, đèn sẽ trả về message WIFI_STATUS ```
 
-### 2. Message ACTIVITY_SET
+### 2. Message WIFI_SET
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
-| Activity | 1 | 1-> daylight, 2->HSL, 3->Effect |
+| ssid length | 1 | chiều dài của ssid |
+| ssid | n | ssid cần kết nối |
+| password | m | mật khẩu tương ứng với ssid |
 
-ví dụ dữ liệu để chuyển qua daylight như sau:
+### 3. Message WIFI_STATUS
 
-| byte | tid | activity |
-| :---: | :---: | :---: |
-| giá trị | 0x00 | 0x00|
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- |
+| ssid length | 1 | chiều dài của ssid |
+| ssid | n | ssid cần kết nối |
+| password | m | mật khẩu tương ứng với ssid |
+
+
+
