@@ -181,7 +181,7 @@ tương tự lệnh EFFECT_SET nhưng sẽ không có phản hồi EFFECT_STATUS
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
-| index | 1 | 0x00, 0x01, 0x02 hoac 0xFF, neu 0xFF thi se chay xoay vong tu 0->3 |
+| index | 1 | 0x00, 0x01, 0x02, 0x03 tương ứng với rgb không nhuyễn, rgb nhuyễn, random không nhuyễn, random nhuyễn, hoặc 0xFF cho remote |
 
 ### 16. Message DEFAULT_EFFECT_STATUS
 
