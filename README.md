@@ -5,7 +5,14 @@
 * tham khảo tài liệu SIG MESH theo link http://www.mediafire.com/file/1w1zl6zi04vb7j2/Bluetooth_SIG_307.pdf/file ở line 307 thể hiện ID của các Model và line 301 thể hiện các OPCODE. định dạng message xem từ mục lục rồi click đến mục tương ứng.
 
 ## 2. Protocol điều khiển đèn theo chuẩn điện quang với Vendor Model (SIG MESH)
-* Điện quang sử dụng chip Bluetooth Nordic nên Vendor Model sẽ có ID là 0x00590000 (trong đó 4 số đầu là id của chip Nordic đã được đăng kí, còn 4 số sau là điện quaang tùy chọn để sử dụng)
+* Các model vendor model sản phẩm Bluetooth SIG Mesh Điện Quang
+
+| model id | Loại thiêt bị |
+| :---: | :--- |
+| 0x00590000 | đèn Apollo |
+| 0x10000000 | Cảm biến PIR |
+| 0x10010000 | Cảm biến ánh sáng |
+| 0x15061992 | Home control |
 
 * Bảng mã OPCODE theo chuẩn điện quang trong model Vendor Mode
 
