@@ -1,5 +1,14 @@
 # KHUNG TRUYỀN MINI GETWAY
 
+| Model id | mô tả |
+| :---: | :--- |
+| 0x15061992 | nhận dữ liệu setup cho getway |
+| 0x20180000 | truyền nhận dữ liệu với đèn apollo |
+| 0x20190000 | truyền nhận dữ liệu với đèn pir |
+| 0x20200000 | truyền nhận dữ liệu với đèn lightsensor |
+
+
+
 | OPCODE | Kiểu lệnh | mô tả |
 | :---: | :--- | :--- | 
 | 0xF0 | WIFI_GET | Lệnh đọc về ssid và mật khẩu wifi đang kết nối |
