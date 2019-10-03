@@ -3,9 +3,10 @@
 | product id | Loại thiêt bị |
 | :---: | :--- |
 | 0x0000 | đèn Apollo |
-| 0x0001 | Home control |
-| 0x0002 | Cảm biến PIR |
-| 0x0003 | Cảm biến ánh sáng |
+| 0x1234 | Home control |
+| 0x0001 | Cảm biến PIR |
+| 0x0002 | Cảm biến ánh sáng |
+| 0x0003 | Cảm biến nhiệt độ |
 
 ## 1. Vendor Model ID
 
