@@ -17,6 +17,7 @@
 | 0x10020000 | Vendor Server cảm biến PIR |
 | 0x10030000 | Vendor Server cảm biến ánh sáng |
 | 0x10040000 | Vendor Server cảm biến nhiệt độ |
+| 0x80010000 | Vendor Client đèn Apollo |
 | 0x80020000 | Vendor Client Cảm biến PIR |
 | 0x80030000 | Vendor Client Cảm biến ánh sáng |
 | 0x80040000 | Vendor Client Cảm biến nhiệt độ |
