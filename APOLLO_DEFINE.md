@@ -2,7 +2,7 @@
 
 | product id | Loại thiêt bị |
 | :---: | :--- |
-| 0x1000 | Home control |
+| 0x1000 | Getway |
 | 0x1001 | đèn Apollo |
 | 0x1002 | Cảm biến PIR |
 | 0x1003 | Cảm biến ánh sáng |
@@ -12,8 +12,8 @@
 
 | model id | Loại thiêt bị |
 | :---: | :--- |
-| 0x80000000 | Vendor Server đèn Apollo |
-| 0x80010001 | Vendor Server home control |
+| 0x80000000 | Vendor Server Getway |
+| 0x80010001 | Vendor Server đèn Apollo |
 | 0x80020002 | Vendor Server cảm biến PIR |
 | 0x80030003 | Vendor Server cảm biến ánh sáng |
 | 0x80040004 | Vendor Server cảm biến nhiệt độ |
