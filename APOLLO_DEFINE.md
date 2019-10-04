@@ -67,6 +67,11 @@
 | 0x1089 | đèn BALL RGBDW |
 | 0x108A | đèn BALL D |
 | 0x108B | đèn BALL W |
+| 0x108C | đèn PANEL RGB |
+| 0x108D | đèn PANEL RGBD |
+| 0x108E | đèn PANEL RGBDW |
+| 0x108F | đèn PANEL D |
+| 0x1090 | đèn PANEL W |
 
 ## 1. Vendor Model ID
 
