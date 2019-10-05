@@ -73,7 +73,12 @@
 | 0x108F | đèn PANEL RGBD |
 | 0x1090 | đèn PANEL RGBW |
 | 0x1091 | đèn PANEL RGBDW |
-
+| 0x1092 | đèn SPOT D |
+| 0x1093 | đèn SPOT W |
+| 0x1094 | đèn SPOT RGB |
+| 0x1095 | đèn SPOT RGBD |
+| 0x1096 | đèn SPOT RGBW |
+| 0x1097 | đèn SPOT RGBDW |
 
 ## 1. Vendor Model ID
 
