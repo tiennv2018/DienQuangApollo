@@ -122,10 +122,31 @@
 
 ``` Sau khi nhận lệnh này không có dữ liệu trả về ```
 
-### 12. Message ENABLE_STATUS
+### 15. Message ENABLE_STATUS
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- |
 | enable | 1 | đang cho phép (1), không cho phép (0) điều khiển |
 
+### 16. Message DFU_SET
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | Transaction Identifier |
+
+``` Sau khi nhận lệnh này, đèn sẽ trả về message DFU_STATUS ```
+
+### 17. Message DFU_SET_UNACKNOWLEDGED
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | Transaction Identifier |
+
+``` Sau khi nhận lệnh này không có dữ liệu trả về ```
+
+### 18. Message DFU_STATUS
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- |
+| enable | 1 | luôn trả về 1 khi nhận lệnh này |
 
