@@ -1,4 +1,4 @@
-# KHUNG TRUYỀN MINI LIGHT SENSOR
+# KHUNG TRUYỀN LIGHT SENSOR
 
 | OPCODE | Kiểu lệnh | mô tả |
 | :---: | :--- | :--- | 
