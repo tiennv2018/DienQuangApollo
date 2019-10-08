@@ -1,4 +1,4 @@
-# KHUNG TRUYỀN MINI GETWAY
+# KHUNG TRUYỀN MINI LIGHT SENSOR
 
 | OPCODE | Kiểu lệnh | mô tả |
 | :---: | :--- | :--- | 
