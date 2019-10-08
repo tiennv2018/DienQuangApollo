@@ -24,7 +24,7 @@
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
-| Value | 2 | giá trị cần setup (*100ms), ví dụ 10-> 10*100 = 1s |
+| Value | 2 | giá trị cần setup (x100ms), ví dụ 10-> 10x100 = 1s |
 
 ``` Sau khi nhận lệnh này, đèn sẽ trả về message DELAY_STATUS ```
 
@@ -33,7 +33,7 @@
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
-| Value | 2 | giá trị cần setup (*100ms), ví dụ 10-> 10*100 = 1s |
+| Value | 2 | giá trị cần setup (x100ms), ví dụ 10-> 10x100 = 1s |
 
 ``` Sau khi nhận lệnh này không có dữ liệu trả về ```
 
@@ -41,7 +41,7 @@
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
-| Value | 2 | giá trị delay (*100ms), ví dụ 10-> 10*100 = 1s |
+| Value | 2 | giá trị delay (x100ms), ví dụ 10-> 10x100 = 1s |
 
 ### 5. Message LEVEL_GET
 
