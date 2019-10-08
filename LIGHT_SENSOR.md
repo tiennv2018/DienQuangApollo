@@ -23,82 +23,109 @@
 | 0xD2 | DFU_STATUS | Trạng thái vào DFU |
 
 
-### 1. Message WIFI_GET
+### 1. Message LUX_GET
 
-``` Sau khi nhận lệnh này, đèn sẽ trả về message WIFI_STATUS ```
+``` Sau khi nhận lệnh này, đèn sẽ trả về message LUX_STATUS ```
 
-### 2. Message WIFI_SET
+### 2. Message LUX_STATUS
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| value | 2 | giá trị cảm biến hiện tại đọc được |
+
+### 3. Message RANGE_GET
+
+``` Sau khi nhận lệnh này, đèn sẽ trả về message RANGE_STATUS ```
+
+### 4. Message RANGE_STATUS
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| Range_Max | 2 | giá trị lớn nhất cảm biến đọc được |
+| Range_Min | 2 | giá trị nhỏ nhất cảm biến đọc được |
+
+### 5. Message SETLUX_GET
+
+``` Sau khi nhận lệnh này, đèn sẽ trả về message SETLUX_STATUS ```
+
+### 6. Message SETLUX_SET
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
-| ssid length | 1 | chiều dài của ssid |
-| ssid | n | ssid cần kết nối |
-| password | m | mật khẩu tương ứng với ssid |
+| Value | 2 | giá trị cần setup |
 
-### 3. Message WIFI_SET_UNACKNOWLEDGED
+``` Sau khi nhận lệnh này, đèn sẽ trả về message SETLUX_STATUS ```
+
+### 7. Message SETLUX_SET_UNKNOWELEDED
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
-| ssid length | 1 | chiều dài của ssid |
-| ssid | n | ssid cần kết nối |
-| password | m | mật khẩu tương ứng với ssid |
+| Value | 2 | giá trị cần setup |
 
-### 4. Message WIFI_STATUS
+``` Sau khi nhận lệnh này không có dữ liệu trả về ```
+
+### 8. Message SETLUX_STATUS
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| Value | 2 | giá trị cần setup |
+
+### 9. Message TOLERANCE_GET
+
+``` Sau khi nhận lệnh này, đèn sẽ trả về message TOLERANCE_STATUS ```
+
+### 9. Message TOLERANCE_SET
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | Transaction Identifier |
+| value | 2 | sai số cần cài đặt |
+
+``` Sau khi nhận lệnh này, đèn sẽ trả về message TOLERANCE_STATUS ```
+
+### 10. Message TOLERANCE_SET_UNKNOWELEDED
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| TID | 1 | Transaction Identifier |
+| value | 2 | sai số cần cài đặt |
+
+``` Sau khi nhận lệnh này không có dữ liệu trả về ```
+
+### 11. Message TOLERANCE_STATUS
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- |
-| ssid length | 1 | chiều dài của ssid |
-| ssid | n | ssid cần kết nối |
-| password | m | mật khẩu tương ứng với ssid |
+| value | 2 | sai số hiện tại của thiết bị |
 
-### 5. Message TOKEN_GET
+### 12. Message ENABLE_GET
 
-``` Sau khi nhận lệnh này, đèn sẽ trả về message TOKEN_STATUS ```
+``` Sau khi nhận lệnh này, đèn sẽ trả về message ENABLE_STATUS ```
 
-### 6. Message TOKEN_SET
+### 13. Message ENABLE_SET
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
-| token | n | token cần setup |
+| enable | 1 | cho phép (1) hoặc không cho phép (0) điều khiển |
 
-### 7. Message TOKEN_SET_UNACKNOWLEDGED
+``` Sau khi nhận lệnh này, đèn sẽ trả về message ENABLE_STATUS ```
+
+### 14. Message ENABLE_SET_UNACKNOWLEDGED
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
-| token | n | token cần setup |
+| enable | 1 | cho phép (1) hoặc không cho phép (0) điều khiển |
 
-### 8. Message TOKEN_STATUS
+``` Sau khi nhận lệnh này không có dữ liệu trả về ```
+
+### 12. Message ENABLE_STATUS
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- |
-| token | n | token hiện tại |
-
-### 9. Message USER_GET
-
-``` Sau khi nhận lệnh này, đèn sẽ trả về message TOKEN_STATUS ```
-
-### 10. Message USER_SET
-
-| Field | Size (octets) | Notes |
-| :--- | :--- | :--- | 
-| TID | 1 | Transaction Identifier |
-| user id | n | user id cần setup |
-
-### 11. Message USER_SET_UNACKNOWLEDGED
-
-| Field | Size (octets) | Notes |
-| :--- | :--- | :--- | 
-| TID | 1 | Transaction Identifier |
-| user id | n | user id cần setup |
-
-### 12. Message USER_STATUS
-
-| Field | Size (octets) | Notes |
-| :--- | :--- | :--- |
-| user id | n | user id hiện tại |
+| enable | 1 | đang cho phép (1), không cho phép (0) điều khiển |
 
 
