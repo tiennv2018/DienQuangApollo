@@ -8,9 +8,8 @@
 | 0xF3 | WIFI_SET_PWD_STATUS | Trạng thái mật khẩu đang kết nối |
 | 0xF4 | TOKEN_SET | lệnh set token cho việc kết nối lên cloud |
 | 0xF5 | TOKEN_STATUS | trạng thái token |
-| 0xF6 | USER_GET | Lệnh đọc về user id đang kết nối lên cloud |
-| 0xF7 | USER_SET | Lệnh cài đặt user id cho việc kết nối lên cloud |
-| 0xF8 | USER_STATUS | trạng thái user id đang kết nối |
+| 0xF6 | USER_SET | Lệnh cài đặt user id cho việc kết nối lên cloud |
+| 0xF7 | USER_STATUS | trạng thái user id đang kết nối |
 | 0xDO | DFU_SET | Lệnh đưa mini getway vào DFU |
 | 0xD1 | DFU_SET_UNACKNOWLEDGED | Lệnh đưa mini getway vào DFU |
 | 0xD2 | DFU_STATUS | trạng thái vào DFU |
