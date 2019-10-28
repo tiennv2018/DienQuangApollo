@@ -6,6 +6,7 @@
 | 0x1002 | Cảm biến PIR |
 | 0x1003 | Cảm biến ánh sáng |
 | 0x1004 | Cảm biến nhiệt độ |
+| 0x1005 | Switch 1 kênh |
 | ... | ... |
 | 0x1050 | đèn Bulb A60 D |
 | 0x1051 | đèn Bulb A60 W |
@@ -89,7 +90,9 @@
 | 0x80020002 | Vendor Server cảm biến PIR |
 | 0x80030003 | Vendor Server cảm biến ánh sáng |
 | 0x80040004 | Vendor Server cảm biến nhiệt độ |
+| 0x80050005 | Vendor Server switch 1 channel |
 | 0x80018001 | Vendor Client đèn Apollo |
 | 0x80028002 | Vendor Client Cảm biến PIR |
 | 0x80038003 | Vendor Client Cảm biến ánh sáng |
 | 0x80048004 | Vendor Client Cảm biến nhiệt độ |
+| 0x80058005 | Vendor Client switch 1 channel |
