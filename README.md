@@ -117,49 +117,60 @@
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
-| TID | 1 | Transaction Identifier |
-| Lenght | 1 | Chiều dài của hiệu ứng tối đa là 12, chú ý chiều dài bao nhiêu thì dữ liệu hue, saturation, timer dài bấy nhiêu |
-| type run | 1 | 0-> dimer, 1-> khong su dung dimer, 2-> dimer mau ngau nhien, 3-> khong su dung dimer, mau ngau nhien |
-| lightness | 2 | độ sáng của hiệu ứng từ 0x0000 -> 0xFFFF |
-| hue | 2 | giá trị hue cho màu đầu tiên của hiệu ứng, từ 0->360 |
-| saturation | 2 |  giá trị saturation cho màu đầu tiên của hiệu ứng, từ 0->0xFFFF  |
-| timer | 2 | thời gian duy trì màu đầu tiên, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
-
-`` Chú ý: nếu len=1 thì như trên, còn nếu len=n thì sẽ lặp lại n-1 lần từ byte hue đến byte timer sau khung truyền trên ``
+| Lenght | 1 | length of color loop data  |
+| type run | 1 | 0-> dimer, 1-> not dimer, 2-> dimer and random, 3-> not dimer and random |
+| hue | 2 | hue of data color loop segment 0, from 0x0000 to 0xFFFF |
+| saturation | 2 |  saturation of data color loop segment 0, from 0x0000 to 0xFFFF  |
+| lightness | 2 | lightness of data color loop segment 0, from 0x0000 to 0xFFFF |
+| timer | 2 | delay of data color loop segment 0, from 0x0000 to 0xFFFF |
+| hue | 2 | hue of data color loop segment 1, from 0x0000 to 0xFFFF |
+| saturation | 2 |  saturation of data color loop segment 1, from 0x0000 to 0xFFFF  |
+| lightness | 2 | lightness of data color loop segment 1, from 0x0000 to 0xFFFF |
+| timer | 2 | delay of data color loop segment 1, from 0x0000 to 0xFFFF |
+| ... | ... | ... |
+| hue | 2 | hue of data color loop segment n, from 0x0000 to 0xFFFF |
+| saturation | 2 |  saturation of data color loop segment n, from 0x0000 to 0xFFFF  |
+| lightness | 2 | lightness of data color loop segment n, from 0x0000 to 0xFFFF |
+| timer | 2 | delay of data color loop segment n, from 0x0000 to 0xFFFF |
 
 ### 13. Message DEFAULT_EFFECT_GET
 
-``` Sau khi nhận lệnh này, đèn sẽ trả về message DEFAULT_EFFECT_STATUS ```
+``` The response to the DEFAULT_EFFECT_GET is a DEFAULT_EFFECT_STATUS. There are no parameters for this message. ```
 
 ### 14. Message DEFAULT_EFFECT_SET
 
+``` The Light DEFAULT_EFFECT_SET is an unacknowledged message used to set the default color loop Actual state of an element ```
+
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
-| index | 1 | 0x00, 0x01, 0x02 hoac 0xFF, neu 0xFF thi se chay xoay vong tu 0->3 |
+| index | 1 | 0x00 in turn, 0x01 in turn and dimming, 0x02 random, 0x03 random and dimming |
 
-``` Trong đèn có lưu dữ liệu của 3 loại hiệu ứng, Mỗi lần nhận lệnh này sẽ chuyển các hiệu ứng có sẵn này và chạy ```
 
 ### 15. Message DEFAULT_EFFECT_SET_UNACKNOWLEDGED
 
+``` The Light DEFAULT_EFFECT_SET_UNACKNOWLEDGED is an unacknowledged message used to set the default color loop Actual state of an element ```
+
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
-| index | 1 | 0x00, 0x01, 0x02, 0x03 tương ứng với rgb không nhuyễn, rgb nhuyễn, random không nhuyễn, random nhuyễn, hoặc 0xFF cho remote |
+| index | 1 | 0x00 in turn, 0x01 in turn and dimming, 0x02 random, 0x03 random and dimming |
 
 ### 16. Message DEFAULT_EFFECT_STATUS
 
-``` tra ve Message EFFECT_STATUS ```
+``` The DEFAULT_EFFECT_STATUS is an unacknowledged message used to report the default color loop Actual state of an element  ```
 
 ### 17. Message DFU_SET
+
+``` The Light DFU_SET is an message used to enter dfu of an element ```
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
 
-``` Sau khi nhận lệnh này, đèn sẽ trả về message DFU_STATUS ```
-
 ### 18. Message DFU_SET_UNACKNOWLEDGED
+
+``` The Light DFU_SET is an unacknowledged message used to enter dfu of an element ```
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
@@ -169,29 +180,35 @@
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
-| Status | 1 | Trạng thái thực hiện 0 hoặc 1 |
+| Status | 1 | status enter dfu |
+
+``` The DFU_STATUS is an unacknowledged message used to report the enter dfu status Actual state of an element  ```
 
 ### 20. Message TEST_SET
 
+``` The Light TEST_SET is an message used to make blinking light of an element ```
+
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
-| loop | 1 | số lần nhấp nháy, từ 0-> 255 |
+| loop | 1 | number set of blinking, from 0-> 255 |
 
-``` Sau khi nhận lệnh này, đèn sẽ trả về message TEST_STATUS ```
+``` The response to the TEST_SET is a TEST_STATUS. ```
 
 ### 21. Message TEST_SET_UNACKNOWLEDGED
 
+``` The Light TEST_SET_UNACKNOWLEDGED is an unacknowledged message used to test light of an element ```
+
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
-| loop | 1 | số lần nhấp nháy, từ 0-> 255 |
+| loop | 1 | number set of blinking, from 0-> 255 |
 
 ### 22. Message TEST_STATUS
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
-| status | 1 | luôn luôn là 1, báo cho Client rằng đèn đã nhận được lệnh test light |
+| status | 1 | alway 1 |
 
 ### 23. Message POWER CONTROL GET
 ``` Lệnh này đọc về trạng thái test đèn, trả về message 	POWER CONTROL STATUS ```
