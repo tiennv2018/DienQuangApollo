@@ -1,154 +1,119 @@
-# KHUNG TRUYỀN ĐIỀU KHIỂN ĐÈN APOLLO V3 THEO CHUẨN SIG MESH
+# Apollo vendor model protocol
 
-## 1. Protocol điều khiển theo chuẩn SIG MESH với model HSL và CTL
+* Opcode define
 
-* tham khảo tài liệu SIG MESH theo link http://www.mediafire.com/file/1w1zl6zi04vb7j2/Bluetooth_SIG_307.pdf/file ở line 307 thể hiện ID của các Model và line 301 thể hiện các OPCODE. định dạng message xem từ mục lục rồi click đến mục tương ứng.
-
-## 2. Protocol điều khiển đèn theo chuẩn điện quang với Vendor Model (SIG MESH)
-
-* Bảng mã OPCODE theo chuẩn điện quang trong model Vendor Mode
-
-| OPCODE | Kiểu lệnh | mô tả |
+| OPCODE | type  | content |
 | :---: | :--- | :--- | 
-| 0xC0 | ACTIVITY_GET | Lệnh đọc về trạng thái đèn |
-| 0xC1 | ACTIVITY_SET | Lệnh set chế độ đèn, daylight, warm white |
-| 0xC2 | ACTIVITY_SET_UNACKNOWLEDGED | Lệnh set chế độ đèn, daylight, warm white  |
-| 0xC3 | ACTIVITY_STATUS | Trạng thái activity |
-| 0xC4 | BRIGHTNESS_CALIBRATION_GET | Lệnh đọc về độ sáng đèn |
-| 0xC5 | BRIGHTNESS_CALIBRATION_SET | Lệnh tăng hoặc giảm độ sáng đèn |
-| 0xC6 | BRIGHTNESS_CALIBRATION_SET_UNACKNOWLEDGED | Lệnh tăng hoặc giảm độ sáng đèn  |
-| 0xC7 | BRIGHTNESS_CALIBRATION_STATUS | Trạng thái độ sáng đèn |
-| 0xC8 | EFFECT_GET | Đọc về hiệu ứng đang chạy |
-| 0xC9 | EFFECT_SET | Lệnh set hiệu ứng |
-| 0xCA | EFFECT_SET_UNACKNOWLEDGED | Lệnh set hiệu ứng |
-| 0xCB | EFFECT_STATUS | Trạng thái hiệu ứng đang set |
-| 0xCC | DEFAULT_EFFECT_GET | Đọc về hiệu ứng mặc định đang chạy |
-| 0xCD | DEFAULT_EFFECT_SET | Set hiệu ứng chạy |
-| 0xCE | DEFAULT_EFFECT_SET_UNACKNOWLEDGED | Set hiệu ứng chạy |
-| 0xCF | DEFAULT_EFFECT_STATUS | Trạng thái hiệu ứng đang set |
-| 0xD0 | DFU_SET | Lệnh set đèn vào chế độ DFU |
-| 0xD1 | DFU_SET_UNACKNOWLEDGED | Lệnh set đèn vào chế độ DFU  |
-| 0xD2 | DFU_STATUS | Trạng thái dfu |
-| 0xD3 | TEST_SET | Lệnh test đèn|
-| 0xD4 | TEST_SET_UNACKNOWLEDGED | Lệnh test đèn  |
-| 0xD5 | TEST_STATUS | Trạng thái test đèn |
-| 0xD6 | POWER CONTROL GET | Đọc trạng thái nguồn |
-| 0xD7 | POWER CONTROL SET | bật, tắt đảo trạng thái đèn |
-| 0xD8 | POWER CONTROL SET UNACKNOWLEDGED | bật, tắt đảo trạng thái đèn không xác nhận|
-| 0xD9 | POWER CONTROL STATUS | Trạng thái power |
-| 0xDA | BRIGHTNESS GET | Đọc về độ sáng hiện tại |
-| 0xDB | BRIGHTNESS SET | set độ sáng đến giá trị truyền xuống |
-| 0xDC | BRIGHTNESS SET UNACKNOWLEDGED | set độ sáng đến giá trị truyền xuống không phản hồi |
-| 0xDD | BRIGHTNESS STATUS | Độ sáng hiện tại |
-| 0xDE | HSL GET | đọc về giá trị HSL hiện tại trong đèn |
-| 0xDF | HSL SET | set giá trị hsl cho đèn |
-| 0xE0 | HSL SET UNACKNOWLEDGED | set giá trị hsl cho đèn, không phản hồi |
-| 0xE1 | HSL STATUS | giá trị hsl hiện tại |
-| 0xE2 | SATURATION GET | đọc về giá trị SATURATION hiện tại trong đèn |
-| 0xE3 | SATURATION SET | set giá trị SATURATION cho đèn |
-| 0xE4 | SATURATION SET UNACKNOWLEDGED | set giá trị SATURATION cho đèn, không phản hồi |
-| 0xE5 | SATURATION STATUS | giá trị SATURATION hiện tại |
-| 0xE6 | CTL GET | đọc về giá trị CTL hiện tại trong đèn |
-| 0xE7 | CTL SET | set giá trị CTL cho đèn |
-| 0xE8 | CTL SET UNACKNOWLEDGED | set giá trị CTL cho đèn, không phản hồi |
-| 0xE9 | CTL STATUS | giá trị CTL hiện tại |
-| 0xEA | TEMPTURATE GET | đọc về giá trị TEMPTURATE hiện tại trong đèn |
-| 0xEB | TEMPTURATE SET | set giá trị TEMPTURATE cho đèn |
-| 0xEC | TEMPTURATE SET UNACKNOWLEDGED | set giá trị TEMPTURATE cho đèn, không phản hồi |
-| 0xED | TEMPTURATE STATUS | giá trị TEMPTURATE hiện tại |
-| 0xEE | VENDOR_SERVER_OPCODE_TEMPTURATE_RANGE_GET |
-| 0xEF | VENDOR_SERVER_OPCODE_TEMPTURATE_RANGE_STATUS |
-| 0xFE | VERSION_GET | Lệnh đọc về phiên bản firmware đèn hiện tại |
-| 0xFF | VERSION_STATUS | phiên bản firmware hiện tại |
+| 0xC0 | ACTIVITY_GET | get current model |
+| 0xC1 | ACTIVITY_SET | set run model: 1-> daylight, 2->HSL, 3->Color loop |
+| 0xC2 | ACTIVITY_SET_UNACKNOWLEDGED | set run model: 1-> daylight, 2->HSL, 3->Color loop  |
+| 0xC3 | ACTIVITY_STATUS | model status |
+| 0xC8 | EFFECT_GET | get data of color loop |
+| 0xC9 | EFFECT_SET | set data of color loop|
+| 0xCA | EFFECT_SET_UNACKNOWLEDGED | set data of color loop |
+| 0xCB | EFFECT_STATUS | color loop status |
+| 0xCC | DEFAULT_EFFECT_GET | get default color loop |
+| 0xCD | DEFAULT_EFFECT_SET | Set default color loop |
+| 0xCE | DEFAULT_EFFECT_SET_UNACKNOWLEDGED | Set default color loop |
+| 0xCF | DEFAULT_EFFECT_STATUS | default color loop status |
+| 0xD0 | DFU_SET | Enter DFU |
+| 0xD1 | DFU_SET_UNACKNOWLEDGED | Enter DFU  |
+| 0xD2 | DFU_STATUS | dfu status |
+| 0xD3 | TEST_SET | Set Blinking test|
+| 0xD4 | TEST_SET_UNACKNOWLEDGED | Set Blinking test |
+| 0xD5 | TEST_STATUS | Blinking test status |
+| 0xD6 | POWER CONTROL GET | Get status current status light |
+| 0xD7 | POWER CONTROL SET | Set model light: 0/1/2 => off/on/toggle |
+| 0xD8 | POWER CONTROL SET UNACKNOWLEDGED | Set model light: 0/1/2 => off/on/toggle |
+| 0xD9 | POWER CONTROL STATUS | status light  |
+| 0xDA | BRIGHTNESS GET | Get brightness |
+| 0xDB | BRIGHTNESS SET | set brightness |
+| 0xDC | BRIGHTNESS SET UNACKNOWLEDGED | set brightness |
+| 0xDD | BRIGHTNESS STATUS | brightness status |
+| 0xDE | HSL GET | get HSL |
+| 0xDF | HSL SET | set HSL |
+| 0xE0 | HSL SET UNACKNOWLEDGED | set HSL |
+| 0xE1 | HSL STATUS | HSL status |
+| 0xE2 | SATURATION GET | get saturation |
+| 0xE3 | SATURATION SET | set saturation |
+| 0xE4 | SATURATION SET UNACKNOWLEDGED | set saturation |
+| 0xE5 | SATURATION STATUS | saturation status |
+| 0xE6 | CTL GET | Get CTL |
+| 0xE7 | CTL SET | set CTL |
+| 0xE8 | CTL SET UNACKNOWLEDGED | set CTL |
+| 0xE9 | CTL STATUS | CTL status |
+| 0xEA | TEMPTURATE GET | Get color temperature |
+| 0xEB | TEMPTURATE SET | Set color temperature |
+| 0xEC | TEMPTURATE SET UNACKNOWLEDGED | Set color temperature  |
+| 0xED | TEMPTURATE STATUS |  Color temperature status |
+| 0xEE | VENDOR_SERVER_OPCODE_TEMPTURATE_RANGE_GET | Get color temperature range |
+| 0xEF | VENDOR_SERVER_OPCODE_TEMPTURATE_RANGE_STATUS | Color temperature range status |
+
 ### 1. Message ACTIVITY_GET
 
-``` Sau khi nhận lệnh này, đèn sẽ trả về message ACTIVITY_STATUS ```
+``` The response to the ACTIVITY_GET is a ACTIVITY_STATUS. There are no parameters for this message. ```
 
 ### 2. Message ACTIVITY_SET
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
-| Activity | 1 | 1-> daylight, 2->HSL, 3->Effect |
+| Activity | 1 | 0x01-> daylight, 0x02->HSL, 0x03->Effect |
 
-ví dụ dữ liệu để chuyển qua daylight như sau:
-
-| byte | tid | activity |
-| :---: | :---: | :---: |
-| giá trị | 0x00 | 0x00|
-
-
-``` Sau khi nhận lệnh này, đèn sẽ trả về message ACTIVITY_STATUS ```
+``` The response to the ACTIVITY_SET is a ACTIVITY_STATUS. ```
 
 ### 3. Message ACTIVITY_SET_UNACKNOWLEDGED
 
-tương tự lệnh ACTIVITY_SET nhưng sẽ không có phản hồi ACTIVITY_STATUS từ đèn khi nhận được lênh này
+``` The Light ACTIVITY_SET_UNACKNOWLEDGED is an unacknowledged message used to set the Activity Actual state of an element ```
 
 ### 4. Message ACTIVITY_STATUS
+
+``` The ACTIVITY_STATUS is an unacknowledged message used to report the Activity Actual state of an element  ```
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | Value | 1 | 0->OFF, 1-> daylight, 2->HSL, 3->Effect |
 
-### 5. Message BRIGHTNESS_CALIBRATION_GET
-
-``` Sau khi nhận lệnh này, đèn sẽ trả về message BRIGHTNESS_CALIBRATION_SET_UNACKNOWLEDGED ```
-
-### 6. Message BRIGHTNESS_CALIBRATION_SET
-
-| Field | Size (octets) | Notes |
-| :--- | :--- | :--- | 
-| TID | 1 | Transaction Identifier |
-| Type | 1 | nếu bằng 0-> giảm, bằng 1-> tăng|
-| Value | 2 | giá trị cần tăng hoặc giảm |
-
-ví dụ để giảm độ sáng hiện tại của đèn đi 0xFF giá trị như sau:
-
-| byte | tid | type | lb_value | hb_value |
-| :---: | :---: | :---: | :---: | :---: |
-| giá trị | 0x00 | 0x00 | 0x64 | 00 |
-
-``` Sau khi nhận lệnh này, đèn sẽ trả về message BRIGHTNESS_CALIBRATION_STATUS ```
-
-### 7. Message BRIGHTNESS_CALIBRATION_SET_UNACKNOWLEDGED
-
-tương tự lệnh BRIGHTNESS_CALIBRATION_SET nhưng sẽ không có phản hồi BRIGHTNESS_CALIBRATION_STATUS từ đèn khi nhận được lênh này
- 
-### 8. Message BRIGHTNESS_CALIBRATION_STATUS
-
-| Field | Size (octets) | Notes |
-| :--- | :--- | :--- | 
-| Value | 2 | giá trị độ sáng hiện tại |
-
 ### 9. Message EFFECT_GET
-``` Sau khi nhận lệnh này, đèn sẽ trả về message EFFECT_STATUS ```
+``` The response to the EFFECT_GET is a EFFECT_STATUS. There are no parameters for this message. ```
 
 ### 10. Message EFFECT_SET
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
 | TID | 1 | Transaction Identifier |
-| Lenght | 1 | Chiều dài của hiệu ứng tối đa là 12, chú ý chiều dài bao nhiêu thì dữ liệu lightness, hue, saturation, timer dài bấy nhiêu |
-| type run | 1 | 0-> dimer, 1-> khong su dung dimer, 2-> dimer mau ngau nhien, 3-> khong su dung dimer, mau ngau nhien|
-| hue | 2 | giá trị hue cho màu đầu tiên của hiệu ứng, từ 0->0xFFFF |
-| saturation | 2 |  giá trị saturation cho màu đầu tiên của hiệu ứng, từ 0->0xFFFF  |
-| lightness | 2 | độ sáng của hiệu ứng từ 0x0000 -> 0xFFFF |
-| timer | 2 | thời gian duy trì màu đầu tiên, đơn vị miliseconds, sau thời gian này sẽ chuyển qua màu tiếp theo |
+| Lenght | 1 | length of color loop data  |
+| type run | 1 | 0-> dimer, 1-> not dimer, 2-> dimer and random, 3-> not dimer and random |
+| hue | 2 | hue of data color loop segment 0, from 0x0000 to 0xFFFF |
+| saturation | 2 |  saturation of data color loop segment 0, from 0x0000 to 0xFFFF  |
+| lightness | 2 | lightness of data color loop segment 0, from 0x0000 to 0xFFFF |
+| timer | 2 | delay of data color loop segment 0, from 0x0000 to 0xFFFF |
+| hue | 2 | hue of data color loop segment 1, from 0x0000 to 0xFFFF |
+| saturation | 2 |  saturation of data color loop segment 1, from 0x0000 to 0xFFFF  |
+| lightness | 2 | lightness of data color loop segment 1, from 0x0000 to 0xFFFF |
+| timer | 2 | delay of data color loop segment 1, from 0x0000 to 0xFFFF |
+| ... | ... | ... |
+| hue | 2 | hue of data color loop segment n, from 0x0000 to 0xFFFF |
+| saturation | 2 |  saturation of data color loop segment n, from 0x0000 to 0xFFFF  |
+| lightness | 2 | lightness of data color loop segment n, from 0x0000 to 0xFFFF |
+| timer | 2 | delay of data color loop segment n, from 0x0000 to 0xFFFF |
 
-ví dụ để gửi hiểu ứng luân phiên giữa màu đỏ sáng 1s và màu xanh lá sáng 2s như sau:
+``` example: enter color loop model with red color and green color ```
 
 | byte | tid | Length | type run | lb_hue | hb_hue | lb_saturation | hb_saturation | lb_lightness | hb_lightness | lb_timer | hb_timer | lb_hue | hb_hue | lb_saturation | hb_saturation | lb_lightness | hb_lightness | lb_timer | hb_timer | 
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | giá trị | 0x00 | 0x02 | 0x00 | 0x00 | 0x00 | 0xFF | 0xFF | 0x00 | 0x80 | 0xE8 | 0x03 | 0x55 | 0x55 | 0xFF | 0xFF | 0x00 | 0x80 | 0xD0 | 0x07 | 
 
-chú ý: lenght ở ví dụ là 2 vì chỉ có 2 màu là đỏ và xanh lá, ở chế độ hsl màu sẽ đậm nhất khi brightness là 50%
+``` note: lenght length is 2 for red and green  ```
 
 
 ### 11. Message EFFECT_SET_UNACKNOWLEDGED
 
-tương tự lệnh EFFECT_SET nhưng sẽ không có phản hồi EFFECT_STATUS từ đèn khi nhận được lênh này
+``` The Light EFFECT_SET_UNACKNOWLEDGED is an unacknowledged message used to set the data of color loop Actual state of an element ```
 
 ### 12. Message EFFECT_STATUS
+
+``` The EFFECT_STATUS is an unacknowledged message used to report the data of color loop Actual state of an element  ```
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
