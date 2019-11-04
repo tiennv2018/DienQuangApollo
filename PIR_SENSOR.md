@@ -11,6 +11,8 @@
 | 0xC5 | LEVEL_SET | lệnh cài đặt giá trị level hight và level low cho việc dimming |
 | 0xC6 | LEVEL_SET_UNKNOWELEDED | lệnh cài đặt giá trị level hight và level low cho việc dimming |
 | 0xC7 | LEVEL_STATUS | trả về giá trị level hight và level low cho việc dimming |
+| 0xC8 | STATUS_GET | lệnh đọc về trạng thái pir hiện tại |
+| 0xC9 | STATUS_STATUS | trả về trạng thái pir hiện tại |
 | 0xD0 | DFU_SET | Lệnh đưa thiết bị vào DFU |
 | 0xD1 | DFU_SET_UNKNOWELEDED | Lệnh đưa thiết bị vào DFU |
 | 0xD2 | DFU_STATUS | Trạng thái vào DFU |
@@ -74,7 +76,17 @@
 | LOW | 2 | mức thấp dimming (0->0xFFFF) |
 | HIGH | 2 | mức cao dimming (0->0xFFFF) |
 
-### 9. Message DFU_SET
+### 9. Message STATUS_GET
+
+``` Sau khi nhận lệnh này, đèn sẽ trả về message STATUS_STATUS ```
+
+### 10. Message STATUS_STATUS
+
+| Field | Size (octets) | Notes |
+| :--- | :--- | :--- | 
+| LOW | 2 | 0-> Not active, 1-> actived |
+
+### 11. Message DFU_SET
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
@@ -82,7 +94,7 @@
 
 ``` Sau khi nhận lệnh này, đèn sẽ trả về message DFU_STATUS ```
 
-### 10. Message DFU_SET_UNACKNOWLEDGED
+### 12. Message DFU_SET_UNACKNOWLEDGED
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- | 
@@ -90,7 +102,7 @@
 
 ``` Sau khi nhận lệnh này không có dữ liệu trả về ```
 
-### 11. Message DFU_STATUS
+### 13. Message DFU_STATUS
 
 | Field | Size (octets) | Notes |
 | :--- | :--- | :--- |
